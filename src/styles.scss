@@ -1,1 +1,138 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+$theme-color: #FF7222;
+.buttons {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+body, html {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    font-family: 'Nanum Gothic';
+}
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+    @media (min-width: 1024px) {
+        width: 500px;
+    }
+
+
+    .header, .footer {
+        position: fixed;
+        left: 0;
+        width: 100%;
+        background-color: $theme-color;
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+    }
+
+    .header {
+        top: 0;
+        height: 50px;
+       &.pwa::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translate(-50%, - 50%);
+        height: 22px;
+        width: 22px;
+        background: url(./assets/icons/arrow-left-white.svg) no-repeat;
+        background-size: cover;
+       }
+    }
+
+    .main {
+        margin-top: 50px;
+        padding: 20px;
+    }
+
+
+    .footer {
+        bottom: 0;
+        height: 64px;
+        background-color: white;
+    }
+
+    .icon {
+        height: 50px;
+        width: 50px;
+        border: 2px solid $theme-color;
+        border-radius: 10px;
+        margin: 0 10px;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, - 50%);
+            height: 22px;
+            width: 22px;
+        }
+        &.save::after {
+            background: url(./assets/icons/save.svg) no-repeat;
+            background-size: cover;
+        }
+        &.bell::after {
+            background: url(./assets/icons/bell.svg) no-repeat;
+            background-size: cover;
+        }
+        &.check::after {
+            background: url(./assets/icons/check.svg) no-repeat;
+            background-size: cover;
+        }
+        &.checkbox::after {
+            background: url(./assets/icons/check-square.svg) no-repeat;
+            background-size: cover;
+        }
+        &.right::after {
+            background: url(./assets/icons/chevron-right.svg) no-repeat;
+            background-size: cover;
+        }
+        &.download::after {
+            background: url(./assets/icons/download.svg) no-repeat;
+            background-size: cover;
+        }
+        &.eye::after {
+            background: url(./assets/icons/eye.svg) no-repeat;
+            background-size: cover;
+        }
+        &.bill::after {
+            background: url(./assets/icons/file-text.svg) no-repeat;
+            background-size: cover;
+        }
+        &.info::after {
+            background: url(./assets/icons/info.svg) no-repeat;
+            background-size: cover;
+        }
+        &.phone::after {
+            background: url(./assets/icons/phone.svg) no-repeat;
+            background-size: cover;
+        }
+        &.back::after {
+            background: url(./assets/icons/arrow-left.svg) no-repeat;
+            background-size: cover;
+        }
+        &.cloud::after {
+            background: url(./assets/icons/download-cloud.svg) no-repeat;
+            background-size: cover;
+        }
+        &.star::after {
+            background: url(./assets/icons/star.svg) no-repeat;
+            background-size: cover;
+        }
+        &.trash::after {
+            background: url(./assets/icons/trash-2.svg) no-repeat;
+            background-size: cover;
+        }
+
+    }
+}
