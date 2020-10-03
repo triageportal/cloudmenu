@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from '../../menu/menu.service';
 
 @Component({
   selector: 'app-takeout',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./takeout.component.scss']
 })
 export class TakeoutComponent implements OnInit {
+  restaurant: any;
 
-  constructor() { }
+  constructor(private menuService: MenuService) { }
 
   ngOnInit(): void {
+    this.restaurant = this.menuService.restaurant;
   }
 
 }

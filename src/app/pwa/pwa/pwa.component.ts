@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuService } from '../../menu/menu.service';
 
 @Component({
   selector: 'app-pwa',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PwaComponent implements OnInit {
 
-  constructor() { }
+  restaurant: any;
+  
+  constructor(private menuService: MenuService) { }
 
   ngOnInit(): void {
+    this.restaurant = this.menuService.restaurant;
   }
 
 }

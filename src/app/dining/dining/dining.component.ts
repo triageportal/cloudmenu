@@ -1,3 +1,4 @@
+import { MenuService } from './../../menu/menu.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dining.component.scss']
 })
 export class DiningComponent implements OnInit {
-
-  constructor() { }
+  restaurant: any;
+  
+  constructor(private menuService: MenuService) { }
 
   ngOnInit(): void {
+    this.restaurant = this.menuService.restaurant;
   }
 
 }
