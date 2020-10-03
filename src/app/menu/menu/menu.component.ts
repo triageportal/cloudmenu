@@ -18,4 +18,9 @@ export class MenuComponent implements OnInit {
     
   }
 
+  goSubmenu(menu) {
+    console.log(menu);
+    
+  }
+
 }

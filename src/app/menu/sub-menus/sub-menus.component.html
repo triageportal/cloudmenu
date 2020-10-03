@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let submenu of submenus; let i = index" (click)=goItems(submenu)>
+        {{submenu.name}}
+    </li>
+</ul>
