@@ -28,14 +28,9 @@ export const restaurant = {
                     items: [
                         {
                             name: 'Garden salad',
-                            description: 'Lettuce, tomat, itd',
-                            price: '$9.99',
-                            priceArr: [
-                                {
-                                    amount: '',
-                                    size: ''
-                                }
-                            ]
+                            description: 'Iceberg and romaine lettuce, hard boiled egg, tomato, onion, cucumber, carrots black olives and pepperoncini',
+                            price: 9.99,
+                            priceArr: []
                         }
                     ]
                 },
@@ -45,14 +40,9 @@ export const restaurant = {
                     items: [
                         {
                             name: 'Garden salad',
-                            description: 'Lettuce, tomat, itd',
-                            price: '$9.99',
-                            priceArr: [
-                                {
-                                    amount: '',
-                                    size: ''
-                                }
-                            ]
+                            description: 'Iceberg and romaine lettuce, hard boiled egg, tomato, onion, cucumber, carrots black olives and pepperoncini',
+                            price: 9.99,
+                            priceArr: []
                         }
                     ]
                 },
@@ -67,20 +57,62 @@ export const restaurant = {
                     description: 'Hand tossed new york style',
                     items: [
                         {
-                            name: 'Regular',
-                            description: 'New york style',
+                            name: 'Traditional cheese pizza',
+                            description: 'Thin crust hand tossed pizza, topped with mozzarella and pizza sauce. Add any topping from large selection',
                             price: '',
                             priceArr: [
                                 {
-                                    amount: '$9.99',
+                                    amount: 9.99,
                                     size: 'Small 12"'
                                 },
                                 {
-                                    amount: '$12.99',
+                                    amount: 12.99,
                                     size: 'Medium 14"'
-                                }
+                                },
+                                {
+                                    amount: 15.99,
+                                    size: 'Large"'
+                                },
                             ]
-                        }
+                        },
+                        {
+                            name: 'Meat lovers pizza',
+                            description: 'Mozzarella, pizza sauce, pepperoni, sausage meatball, ham and bacon',
+                            price: '',
+                            priceArr: [
+                                {
+                                    amount: 9.99,
+                                    size: 'Small 12"'
+                                },
+                                {
+                                    amount: 12.99,
+                                    size: 'Medium 14"'
+                                },
+                                {
+                                    amount: 15.99,
+                                    size: 'Large"'
+                                },
+                            ]
+                        },
+                        {
+                            name: 'Arugula',
+                            description: 'Mozzarella cheese, fresh tomatoes, basil pesto topped with chilled arugula leaves drizzled with balsamic vinaigrette and olive oil. ',
+                            price: '',
+                            priceArr: [
+                                {
+                                    amount: 9.99,
+                                    size: 'Small 12"'
+                                },
+                                {
+                                    amount: 12.99,
+                                    size: 'Medium 14"'
+                                },
+                                {
+                                    amount: 15.99,
+                                    size: 'Large"'
+                                },
+                            ]
+                        },
                     ],
                     modifiers: [
                         {
@@ -88,14 +120,14 @@ export const restaurant = {
                             category: [
                                 {
                                     name: 'veggie',
-                                    price: '$2.99',
+                                    price: 2.99,
                                     items: [
                                         'broccoli', 'mush'
                                     ]
                                 },
                                 {
                                     name: 'meat',
-                                    price: '$2.99',
+                                    price: 2.99,
                                     items: [
                                         'roni', 'meatball'
                                     ]

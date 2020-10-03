@@ -1,0 +1,26 @@
+<div class="title">
+    <div>{{submenu}}</div>
+    <div *ngIf="subDescription" class="description">{{subDescription}}</div>
+</div>
+
+<ul  class="items-list">
+    <li *ngFor="let item of items; let i = index" >
+        <div class="item">
+            <div class="name">
+                <div>{{item.name}}<span (click)=flagItem(item) [ngClass]="item.flag ? 'checked' : 'unchecked'"></span></div>
+                <div class="price" *ngIf="item.price">{{item.price | currency: 'USD'}}</div>
+                
+            </div>
+            <div class="description">{{item.description}}</div>
+            <div class="prices" *ngIf="item.priceArr?.length > 0">
+                <ul class="price-list">
+                    <li *ngFor="let price of item.priceArr">
+                        <span>{{price.size}}</span>
+                        <span>{{price.amount | currency: 'USD'}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </li>
+</ul>

@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
 import { MenuTypesComponent } from './menu-types/menu-types.component';
 import { SubMenusComponent } from './sub-menus/sub-menus.component';
+import { ItemsComponent } from './items/items.component';
 
 const routes: Routes = [
   { 
@@ -16,6 +17,10 @@ const routes: Routes = [
       {
         path: 'submenus',
         component: SubMenusComponent
+      },
+      {
+        path: 'items',
+        component: ItemsComponent
       },
     ] 
   }

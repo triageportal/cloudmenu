@@ -5,6 +5,7 @@
 .buttons {
   position: fixed;
   top: 0;
+  right: 50%;
   z-index: 100;
 }
 
@@ -43,17 +44,64 @@ html {
     height: 50px;
     z-index: 20;
     font-size: 24px;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 20px;
-      transform: translate(-50%, - 50%);
-      height: 22px;
-      width: 22px;
-      background: url(./assets/icons/arrow-left-white.svg) no-repeat;
-      background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    .back {
+      width: 50px;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translate(-50%, - 50%);
+        height: 22px;
+        width: 22px;
+        background: url(./assets/icons/arrow-left-white.svg) no-repeat;
+        background-size: cover;
+      }
+    }
+    .flags {
+      width: 50px;
+      position: relative;
+      cursor: pointer;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 11px;
+        transform: translate(0%, - 50%);
+        height: 30px;
+        width: 30px;
+        border: 2px solid #ffffff;
+        border-radius: 5px;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: -12px;
+        right: 3px;
+        height: 20px;
+        width: 20px;
+        background-color: $theme-color;
+        border-radius: 15px;
+        cursor: pointer;
+      }
+      div {
+        font-size: 22px;
+        margin-bottom: -6px;
+        margin-left: -10px;
+        &::after {
+          content: '';
+          position: absolute;
+          top: -12px;
+          left: 25px;
+          height: 22px;
+          width: 22px;
+          background: url(./assets/icons/check-white.svg) no-repeat;
+          background-size: cover;
+          z-index: 20;
+        }
+      }
     }
   }
 
@@ -64,7 +112,7 @@ html {
 
 /*** MENU ****/
 
-ul {
+.menu-list {
   list-style-type: none;
   padding: 0;
   margin-top: 0;;
@@ -73,7 +121,7 @@ ul {
       border-top: 1px solid $theme-color;
       position: relative;
       font-size: 21px;
-      font-weight: bold;
+      font-weight: 500;
       color: $gray;
       cursor: pointer;
       &::after {
