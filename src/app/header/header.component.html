@@ -1,7 +1,7 @@
 <div class="header">
-    <div class="back"></div>
-    <div class="title">restaurant.name</div>
-    <div class="flags">
-      <div>4</div>
+    <div class="back" (click)="goBack()"></div>
+    <div class="title">{{restaurantName}}</div>
+    <div class="flags" [ngStyle]="{'visibility': flags ? 'visible' : 'hidden'}">
+      <div>{{flags}}</div>
     </div>
   </div>

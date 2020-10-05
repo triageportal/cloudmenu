@@ -19,6 +19,10 @@ const routes: Routes = [
         component: SubMenusComponent
       },
       {
+        path: 'items/:mode',
+        component: ItemsComponent
+      },
+      {
         path: 'items',
         component: ItemsComponent
       },

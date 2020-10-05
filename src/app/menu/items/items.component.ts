@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../menu.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { log } from 'util';
+import { HeaderService } from '../../header/header.service';
 
 @Component({
   selector: 'app-items',
@@ -14,7 +15,7 @@ export class ItemsComponent implements OnInit {
   submenu: string;
   subDescription: string;
 
-  constructor(private menuService: MenuService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private headerService: HeaderService ,private menuService: MenuService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     if (this.menuService.menuTypeIndex == undefined) {
@@ -31,9 +32,6 @@ export class ItemsComponent implements OnInit {
   }
 
   flagItem(item) {
-    console.log(item);
-    console.log(this.menuService.flagedItems);
-
     const itemIndex = this.items.findIndex(val => {
       return item.name == val.name
     })
@@ -43,15 +41,15 @@ export class ItemsComponent implements OnInit {
     })
  
     if (flagedIndex == -1) {
-      console.log(flagedIndex)
       this.menuService.flagedItems.push(item)
       this.items[itemIndex]['flag'] = true;
+      this.headerService.flagsSource.next(this.menuService.flagedItems.length);
+      
     } else {
-      console.log(flagedIndex)
       this.menuService.flagedItems.splice(flagedIndex, 1);
       this.items[itemIndex]['flag'] = false;
+      this.headerService.flagsSource.next(this.menuService.flagedItems.length);
     }
-    console.log(this.menuService.flagedItems);
   }
 
 }
