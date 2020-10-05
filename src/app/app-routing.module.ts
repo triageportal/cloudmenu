@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'pwa', loadChildren: () => import('./pwa/pwa.module').then(m => m.PwaModule) }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {useHash: true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
