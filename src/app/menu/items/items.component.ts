@@ -25,7 +25,7 @@ export class ItemsComponent implements OnInit {
       this.route.params.subscribe(
         params => {
           if (params['mode'] == 'flags') {
-            this.items = this.menuService.flagedItems;
+            this.items = this.menuService.getFlagedItems();
             this.submenu = 'Your bookmarked items'
             this.flaggedItems = true;
           } else {
@@ -45,19 +45,25 @@ export class ItemsComponent implements OnInit {
       return item.name == val.name
     })
 
-    const flagedIndex = this.menuService.flagedItems.findIndex(val => {
-      return item.name == val.name
-    })
- 
+    const flagedIndex = this.menuService.getFlagedIndex(item.name);
+
     if (flagedIndex == -1) {
-      this.items[itemIndex]['flag'] = true;
-      this.menuService.flagedItems.push(item)
-      this.headerService.flagsSource.next(this.menuService.flagedItems.length);     
+      this.addFlag(itemIndex, item) 
     } else {
-      this.items[itemIndex]['flag'] = false;
-      this.menuService.flagedItems.splice(flagedIndex, 1);
-      this.headerService.flagsSource.next(this.menuService.flagedItems.length);
+      this.removeFlag(itemIndex, flagedIndex)
     }
+  }
+
+  addFlag(itemIndex, item) {
+    this.items[itemIndex]['flag'] = true;
+    const totalFlagedItems = this.menuService.addFlag(item);
+    this.headerService.flagsSource.next(totalFlagedItems);  
+  }
+
+  removeFlag(itemIndex, flagedIndex) {
+    this.items[itemIndex]['flag'] = false;
+    const totalFlagedItems = this.menuService.removeFlag(flagedIndex);
+    this.headerService.flagsSource.next(totalFlagedItems);
   }
 
 }
