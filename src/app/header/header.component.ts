@@ -39,8 +39,13 @@ export class HeaderComponent implements OnInit {
   }
 
   goFlagedItems() {
+    let urls = this.router.url.split('/');
     if (!this.router.url.includes('flags')){
-      this.router.navigate([`${this.router.url}/flags`], { relativeTo: this.route})
+      if (this.router.url.includes('pwa')) {
+        this.router.navigate([`${urls[1]}/menu/items/flags`])
+      } else {      
+        this.router.navigate([`${urls[1]}/menu/items/flags`])
+      }
     }
   }
 
