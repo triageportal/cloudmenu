@@ -39,7 +39,9 @@ export class HeaderComponent implements OnInit {
   }
 
   goFlagedItems() {
-    this.router.navigate([`${this.router.url}/flags`], { relativeTo: this.route})
+    if (!this.router.url.includes('flags')){
+      this.router.navigate([`${this.router.url}/flags`], { relativeTo: this.route})
+    }
   }
 
 }
