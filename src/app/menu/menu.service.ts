@@ -7,21 +7,24 @@ import { restaurant } from '../data/restaurant';
 export class MenuService {
 
   restaurant = restaurant;
-  menus = restaurant.menu;
+  menus: any[];
   menuTypeIndex: any;
   submenuIndex: any;
+  restaurantIndex: any;
   flagedItems: any[] = [];
 
   constructor() { 
   }
 
 
-  flagItem(){
-    
+  
+  getMenus() {
+    return this.restaurant.menus;
   }
 
   getSubmenu () {
-    return this.menus[this.menuTypeIndex]['submenu'];
+    const menus = this.getMenus();
+    return menus[this.menuTypeIndex]['submenu'];
   }
 
   getSubmenuName () {

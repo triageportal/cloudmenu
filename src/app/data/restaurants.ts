@@ -18,7 +18,7 @@ export const restaurants = [
                 },
             ]
         },
-        menu: [
+        menus: [
             {
                 type: "Lunch",
                 description: 'Lunch served 11am-4pm',

@@ -14,14 +14,21 @@ export class MenuTypesComponent implements OnInit {
   constructor(private headerService: HeaderService, private menuService: MenuService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.headerService.backButtonSource.next(false);
+    this.setBackButton();
+    this.menus = this.menuService.getMenus();
     console.log(this.menuService.menus);
-    this.menus = this.menuService.menus;
+  }
+
+  setBackButton() {
+    if (this.router.url.includes('pwa')) {
+      this.headerService.backButtonSource.next(true);
+    } else {
+      this.headerService.backButtonSource.next(false);
+    }
   }
 
   goSubmenu(menuTypeIndex) {
     this.menuService.menuTypeIndex = menuTypeIndex;
     this.router.navigate(['submenus'], { relativeTo: this.route })
-    
   }
 }

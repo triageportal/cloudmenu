@@ -13,15 +13,8 @@ export class MenuComponent implements OnInit {
   constructor(private menuService: MenuService, private headerService: HeaderService) { }
 
   ngOnInit(): void {
-    this.headerService.backButtonSource.next(false);
-    console.log(this.menuService.menus);
-    this.menus = this.menuService.menus;
-    
+    this.headerService.backButtonSource.next(false); 
   }
 
-  goSubmenu(menu) {
-    console.log(menu);
-    
-  }
 
 }
