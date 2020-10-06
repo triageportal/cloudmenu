@@ -10,6 +10,9 @@ constructor() { }
 
   flagsSource = new Subject<any>();
   flagsObservable = this.flagsSource.asObservable();
+  
+  backButtonSource = new Subject<any>();
+  backButtonObservable = this.backButtonSource.asObservable();
 
 
   

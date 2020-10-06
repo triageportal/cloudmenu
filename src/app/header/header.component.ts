@@ -13,6 +13,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class HeaderComponent implements OnInit {
   restaurantName: any;
   flags: number;
+  backButton = false;
 
   constructor(private route: ActivatedRoute ,private router: Router ,private menuService: MenuService, private location: Location, private headerService: HeaderService) { }
 
@@ -21,7 +22,13 @@ export class HeaderComponent implements OnInit {
         
     this.headerService.flagsObservable.subscribe(
       result => {
-        this.flags = result
+        this.flags = result 
+      }
+    )
+
+    this.headerService.backButtonObservable.subscribe(
+      result => {
+        this.backButton = result
       }
     )
   }

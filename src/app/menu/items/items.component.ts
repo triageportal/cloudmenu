@@ -16,7 +16,7 @@ export class ItemsComponent implements OnInit {
   subDescription: string;
   flaggedItems: boolean;
 
-  constructor(private headerService: HeaderService ,private menuService: MenuService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private headerService: HeaderService, private menuService: MenuService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     if (this.menuService.menuTypeIndex == undefined) {
@@ -36,9 +36,8 @@ export class ItemsComponent implements OnInit {
           }
         }
       )
-      
     }
-    
+    this.headerService.backButtonSource.next(true);
   }
 
   flagItem(item) {

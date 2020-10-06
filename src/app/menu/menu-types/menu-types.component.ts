@@ -1,3 +1,4 @@
+import { HeaderService } from './../../header/header.service';
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../menu.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -10,13 +11,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class MenuTypesComponent implements OnInit {
 
   menus: any;
-  constructor(private menuService: MenuService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private headerService: HeaderService, private menuService: MenuService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-
+    this.headerService.backButtonSource.next(false);
     console.log(this.menuService.menus);
     this.menus = this.menuService.menus;
-    
   }
 
   goSubmenu(menuTypeIndex) {

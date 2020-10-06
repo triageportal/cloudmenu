@@ -1,3 +1,4 @@
+import { HeaderService } from './../../header/header.service';
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../menu.service';
 
@@ -9,10 +10,10 @@ import { MenuService } from '../menu.service';
 export class MenuComponent implements OnInit {
 
   menus: any;
-  constructor(private menuService: MenuService) { }
+  constructor(private menuService: MenuService, private headerService: HeaderService) { }
 
   ngOnInit(): void {
-
+    this.headerService.backButtonSource.next(false);
     console.log(this.menuService.menus);
     this.menus = this.menuService.menus;
     
