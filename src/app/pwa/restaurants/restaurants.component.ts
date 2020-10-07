@@ -18,13 +18,23 @@ export class RestaurantsComponent implements OnInit {
 
   ngOnInit(): void {
     this.headerService.backButtonSource.next(false);
-    this.headerService.headerTitleSource.next('Cloud Menu')
+    this.headerService.headerTitleSource.next('Cloud Menu');
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+    this.headerService.dailySpecialsSource.next(true)
+    })
   }
 
   goMenu(restaurant) {
     this.menuService.restaurant = restaurant;
     this.headerService.headerTitleSource.next(restaurant.name)
     this.router.navigate(['../menu'], { relativeTo: this.route })
+  }
+
+  ngOnDestroy(): void {
+    this.headerService.dailySpecialsSource.next(false)
   }
 
 }

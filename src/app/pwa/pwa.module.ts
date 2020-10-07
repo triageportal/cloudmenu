@@ -5,10 +5,11 @@ import { PwaRoutingModule } from './pwa-routing.module';
 import { PwaComponent } from './pwa/pwa.component';
 import { HeaderModule } from '../header/header.module';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
+import { DailySpecialsComponent } from './daily-specials/daily-specials.component';
 
 
 @NgModule({
-  declarations: [PwaComponent, RestaurantsComponent],
+  declarations: [PwaComponent, RestaurantsComponent, DailySpecialsComponent],
   imports: [
     CommonModule,
     PwaRoutingModule,
