@@ -12,6 +12,7 @@ export class PwaComponent implements OnInit {
 
   restaurant: any;
   dailySpecials = true;
+  footerButtons = true;
   
   constructor(private router: Router ,private menuService: MenuService, private headerService: HeaderService) { }
 
@@ -20,6 +21,11 @@ export class PwaComponent implements OnInit {
     this.headerService.dailySpecialsObservable.subscribe(
       result => {
         this.dailySpecials = result;
+      }
+    )
+    this.headerService.footerButtonsObservable.subscribe(
+      result => {
+        this.footerButtons = result;
       }
     )
   }

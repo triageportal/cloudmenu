@@ -24,6 +24,7 @@ export class RestaurantsComponent implements OnInit {
   ngAfterViewInit(): void {
     setTimeout(() => {
     this.headerService.dailySpecialsSource.next(true)
+    this.headerService.footerButtonsSource.next(true)
     })
   }
 

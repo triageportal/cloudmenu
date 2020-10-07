@@ -5,8 +5,8 @@
       
   </div>
   <div class="footer">
-    <div class="icon info"></div>
-    <div class="icon phone"></div>
+    <div class="icon info" *ngIf="footerButtons"></div>
+    <div class="icon phone" *ngIf="footerButtons"></div>
     <div class="daily-specials" [ngStyle]="{'display': dailySpecials ? 'flex' : 'none'}" (click)="goDailySpecials()">Daily Specials</div>
   </div>
 </div>

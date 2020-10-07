@@ -19,5 +19,8 @@ constructor() { }
   
   dailySpecialsSource = new Subject<any>();
   dailySpecialsObservable = this.dailySpecialsSource.asObservable();
+  
+  footerButtonsSource = new Subject<any>();
+  footerButtonsObservable = this.footerButtonsSource.asObservable();
 
 }
