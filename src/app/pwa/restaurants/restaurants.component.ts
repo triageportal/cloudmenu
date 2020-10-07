@@ -11,7 +11,6 @@ import { restaurants } from '../../data/restaurants';
 })
 export class RestaurantsComponent implements OnInit {
 
-  menus: any;
   restaurants = restaurants;
 
   constructor(private headerService: HeaderService, private menuService: MenuService, private router: Router, private route: ActivatedRoute) { }
@@ -23,8 +22,8 @@ export class RestaurantsComponent implements OnInit {
 
   ngAfterViewInit(): void {
     setTimeout(() => {
-    this.headerService.dailySpecialsSource.next(true)
-    this.headerService.footerButtonsSource.next(true)
+      this.headerService.dailySpecialsSource.next(true)
+      this.headerService.footerButtonsSource.next(true)
     })
   }
 

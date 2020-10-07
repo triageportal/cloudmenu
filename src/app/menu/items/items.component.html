@@ -7,7 +7,7 @@
     <li *ngFor="let item of items; let i = index" >
         <div class="item">
             <div class="name">
-                <div>{{item.name}}<span (click)=flagItem(item) [ngClass]="item.flag ? 'checked' : 'unchecked'"></span></div>
+                <div>{{item.name}}<span (click)="flagItem(item)" [ngClass]="item.flag ? 'checked' : 'unchecked'"></span></div>
                 <div class="price" *ngIf="item.price">{{item.price | currency: 'USD'}}</div>
                 
             </div>

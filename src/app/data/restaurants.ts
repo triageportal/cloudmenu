@@ -18,6 +18,11 @@ export const restaurants = [
                 },
             ]
         },
+        dailySpecials: {
+            name: 'Takeout Special',
+            description: 'Large cheese pizza with 2 toppings',
+            price: 9.99
+        },
         menus: [
             {
                 type: "Lunch",
@@ -160,6 +165,11 @@ export const restaurants = [
                     link: ''
                 },
             ]
+        },
+        dailySpecials: {
+            name: 'Takeout Special',
+            description: 'Large cheese pizza with 2 toppings',
+            price: 9.99
         },
         menus: [
             {
@@ -304,6 +314,11 @@ export const restaurants = [
                 },
             ]
         },
+        dailySpecials: {
+            name: 'Takeout Special',
+            description: 'Large cheese pizza with 2 toppings',
+            price: 9.99
+        },
         menus: [
             {
                 type: "Lunch",
@@ -446,6 +461,11 @@ export const restaurants = [
                     link: ''
                 },
             ]
+        },
+        dailySpecials: {
+            name: 'Takeout Special',
+            description: 'Large cheese pizza with 2 toppings',
+            price: 9.99
         },
         menus: [
             {

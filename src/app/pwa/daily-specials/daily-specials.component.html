@@ -1,1 +1,17 @@
-<p>daily-specials works!</p>
+<ul class="items-list">
+  <ng-container *ngFor="let restaurant of restaurants; let i = index">
+    <li *ngIf="restaurant.dailySpecials">
+      <div class="title">
+        <div>{{restaurant?.name}}</div>
+      </div>
+      <div class="item">
+        <div class="name">
+          <div>{{restaurant.dailySpecials?.name}}<span (click)="flagItem(restaurant.dailySpecials, i)" [ngClass]="restaurant.dailySpecials.flag ? 'checked' : 'unchecked'"></span></div>
+          <div class="price" *ngIf="restaurant.dailySpecials.price">
+            {{restaurant.dailySpecials?.price | currency: 'USD'}}</div>
+        </div>
+        <div class="description">{{restaurant.dailySpecials?.description}}</div>
+      </div>
+    </li>
+  </ng-container>
+</ul>
