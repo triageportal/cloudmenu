@@ -13,6 +13,9 @@ constructor() { }
   
   backButtonSource = new Subject<any>();
   backButtonObservable = this.backButtonSource.asObservable();
+  
+  headerTitleSource = new Subject<any>();
+  headerTitleObservable = this.headerTitleSource.asObservable();
 
 
   

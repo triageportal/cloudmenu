@@ -11,14 +11,13 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  restaurantName: any;
+  headerTitle = 'Cloud Menu';
   flags: number;
   backButton = false;
 
   constructor(private route: ActivatedRoute ,private router: Router ,private menuService: MenuService, private location: Location, private headerService: HeaderService) { }
 
   ngOnInit(): void {
-    this.restaurantName = this.menuService.restaurant.name;
         
     this.headerService.flagsObservable.subscribe(
       result => {
@@ -28,7 +27,13 @@ export class HeaderComponent implements OnInit {
 
     this.headerService.backButtonObservable.subscribe(
       result => {
-        this.backButton = result
+        this.backButton = result;
+      }
+    )
+
+    this.headerService.headerTitleObservable.subscribe (
+      result => {
+        this.headerTitle = result;
       }
     )
   }
@@ -41,11 +46,7 @@ export class HeaderComponent implements OnInit {
   goFlagedItems() {
     let urls = this.router.url.split('/');
     if (!this.router.url.includes('flags')){
-      if (this.router.url.includes('pwa')) {
-        this.router.navigate([`${urls[1]}/menu/items/flags`])
-      } else {      
-        this.router.navigate([`${urls[1]}/menu/items/flags`])
-      }
+      this.router.navigate([`${urls[1]}/menu/items/flags`]) 
     }
   }
 

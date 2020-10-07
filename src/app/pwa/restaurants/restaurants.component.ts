@@ -18,10 +18,12 @@ export class RestaurantsComponent implements OnInit {
 
   ngOnInit(): void {
     this.headerService.backButtonSource.next(false);
+    this.headerService.headerTitleSource.next('Cloud Menu')
   }
 
   goMenu(restaurant) {
     this.menuService.restaurant = restaurant;
+    this.headerService.headerTitleSource.next(restaurant.name)
     this.router.navigate(['../menu'], { relativeTo: this.route })
   }
 
