@@ -25,23 +25,28 @@ export class MenuService {
     return this.restaurant.menus;
   }
 
-  getSubmenu () {
+  getSubmenus () {
     const menus = this.getMenus();
     return menus[this.menuTypeIndex]['submenu'];
   }
 
   getSubmenuName () {
-    const submenu = this.getSubmenu();
+    const submenu = this.getSubmenus();
     return submenu[this.submenuIndex]['name'];
   }
 
+  getSubmenu () {
+    const submenu = this.getSubmenus();
+    return submenu[this.submenuIndex];
+  }
+
   getSubDescription () {
-    const submenu = this.getSubmenu();
+    const submenu = this.getSubmenus();
     return submenu[this.submenuIndex]['description'];
   }
 
   getItems() {
-    const submenu = this.getSubmenu()
+    const submenu = this.getSubmenus()
     return submenu[this.submenuIndex]['items'];
   }
 

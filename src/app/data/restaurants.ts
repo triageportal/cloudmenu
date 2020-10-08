@@ -38,18 +38,50 @@ export const restaurants = [
                                 price: 9.99,
                                 priceArr: []
                             }
+                        ],
+                        mods: [                           
+                            {
+                                name: 'veggie toppings',
+                                price: 2.99,
+                                items: [
+                                    'broccoli', 'mush'
+                                ]
+                            },
+                            {
+                                name: 'meat toppings',
+                                price: 2.99,
+                                items: [
+                                    'roni', 'meatball'
+                                ]
+                            }                            
                         ]
                     },
                     {
-                        name: 'salads',
-                        description: 'Served with 2 rolls',
+                        name: 'Subs',
+                        description: '',
                         items: [
                             {
-                                name: 'Garden salad',
+                                name: 'House philly steak',
                                 description: 'Iceberg and romaine lettuce, hard boiled egg, tomato, onion, cucumber, carrots black olives and pepperoncini',
                                 price: 9.99,
                                 priceArr: []
                             }
+                        ],
+                        mods: [                           
+                            {
+                                name: 'veggie toppings',
+                                price: 2.99,
+                                items: [
+                                    'broccoli', 'mush'
+                                ]
+                            },
+                            {
+                                name: 'meat toppings',
+                                price: 2.99,
+                                items: [
+                                    'roni', 'meatball'
+                                ]
+                            }                            
                         ]
                     },
                 ]
@@ -120,27 +152,21 @@ export const restaurants = [
                                 ]
                             },
                         ],
-                        modifiers: [
+                        mods: [                           
                             {
-                                name: 'toppings',
-                                category: [
-                                    {
-                                        name: 'veggie',
-                                        price: 2.99,
-                                        items: [
-                                            'broccoli', 'mush'
-                                        ]
-                                    },
-                                    {
-                                        name: 'meat',
-                                        price: 2.99,
-                                        items: [
-                                            'roni', 'meatball'
-                                        ]
-                                    }
+                                name: 'veggie toppings',
+                                price: 2.99,
+                                items: [
+                                    'broccoli', 'mush'
                                 ]
-                                
-                            }
+                            },
+                            {
+                                name: 'meat toppings',
+                                price: 2.99,
+                                items: [
+                                    'roni', 'meatball'
+                                ]
+                            }                            
                         ]
                     },
                 ]
@@ -186,18 +212,50 @@ export const restaurants = [
                                 price: 9.99,
                                 priceArr: []
                             }
+                        ],
+                        mods: [                           
+                            {
+                                name: 'Dressings',
+                                price: 0,
+                                items: [
+                                    'balsamic', 'ranch', 'blue cheese'
+                                ]
+                            },
+                            {
+                                name: 'meat toppings',
+                                price: 0,
+                                items: [
+                                    'Chicken', 'Tuna', 'Salmon'
+                                ]
+                            }                            
                         ]
                     },
                     {
-                        name: 'salads',
-                        description: 'Served with 2 rolls',
+                        name: 'Subs',
+                        description: '',
                         items: [
                             {
-                                name: 'Garden salad',
+                                name: 'House philly steak',
                                 description: 'Iceberg and romaine lettuce, hard boiled egg, tomato, onion, cucumber, carrots black olives and pepperoncini',
                                 price: 9.99,
                                 priceArr: []
                             }
+                        ],
+                        mods: [                           
+                            {
+                                name: 'veggie toppings',
+                                price: 2.99,
+                                items: [
+                                    'broccoli', 'mush'
+                                ]
+                            },
+                            {
+                                name: 'meat toppings',
+                                price: 2.99,
+                                items: [
+                                    'roni', 'meatball'
+                                ]
+                            }                            
                         ]
                     },
                 ]
@@ -268,27 +326,69 @@ export const restaurants = [
                                 ]
                             },
                         ],
-                        modifiers: [
+                        mods: [                           
                             {
-                                name: 'toppings',
-                                category: [
+                                name: 'veggie toppings',
+                                price: 2.99,
+                                items: [
+                                    'broccoli', 'mush'
+                                ]
+                            },
+                            {
+                                name: 'meat toppings',
+                                price: 2.99,
+                                items: [
+                                    'roni', 'meatball'
+                                ]
+                            }                            
+                        ]
+                    },
+                    {
+                        name: 'Pasta',
+                        description: 'Served with soup or salad and two garlic rolls',
+                        items: [
+                            {
+                                name: 'Pasta marinara',
+                                description: 'Thin crust hand tossed pizza, topped with mozzarella and pizza sauce. Add any topping from large selection',
+                                price: 12.99,
+                                priceArr: [
                                     {
-                                        name: 'veggie',
-                                        price: 2.99,
-                                        items: [
-                                            'broccoli', 'mush'
-                                        ]
+                                        amount: 3.99,
+                                        size: 'Add Meatballs'
                                     },
                                     {
-                                        name: 'meat',
-                                        price: 2.99,
-                                        items: [
-                                            'roni', 'meatball'
-                                        ]
-                                    }
+                                        amount: 3.99,
+                                        size: 'Add Sausage'
+                                    },
+                                    {
+                                        amount: 3.99,
+                                        size: 'Add chicken'
+                                    },
                                 ]
-                                
-                            }
+                            },
+                        ],
+                        mods: [                           
+                            {
+                                name: 'Pasta choice',
+                                price: 0,
+                                items: [
+                                    'Penne', 'Spaghetti', 'Fettuchini'
+                                ]
+                            },
+                            {
+                                name: 'Side salad',
+                                price: 0,
+                                items: [
+                                    'Garden slad', 'ceasar salad'
+                                ]
+                            },                            
+                            {
+                                name: 'Soup',
+                                price: 0,
+                                items: [
+                                    'Pasta fajioli', 'Minestrone', 'chicken noodle'
+                                ]
+                            },                            
                         ]
                     },
                 ]
@@ -334,18 +434,50 @@ export const restaurants = [
                                 price: 9.99,
                                 priceArr: []
                             }
+                        ],
+                        mods: [                           
+                            {
+                                name: 'veggie toppings',
+                                price: 2.99,
+                                items: [
+                                    'broccoli', 'mush'
+                                ]
+                            },
+                            {
+                                name: 'meat toppings',
+                                price: 2.99,
+                                items: [
+                                    'roni', 'meatball'
+                                ]
+                            }                            
                         ]
                     },
                     {
-                        name: 'salads',
-                        description: 'Served with 2 rolls',
+                        name: 'Subs',
+                        description: '',
                         items: [
                             {
-                                name: 'Garden salad',
+                                name: 'House philly steak',
                                 description: 'Iceberg and romaine lettuce, hard boiled egg, tomato, onion, cucumber, carrots black olives and pepperoncini',
                                 price: 9.99,
                                 priceArr: []
                             }
+                        ],
+                        mods: [                           
+                            {
+                                name: 'veggie toppings',
+                                price: 2.99,
+                                items: [
+                                    'broccoli', 'mush'
+                                ]
+                            },
+                            {
+                                name: 'meat toppings',
+                                price: 2.99,
+                                items: [
+                                    'roni', 'meatball'
+                                ]
+                            }                            
                         ]
                     },
                 ]
@@ -416,27 +548,21 @@ export const restaurants = [
                                 ]
                             },
                         ],
-                        modifiers: [
+                        mods: [                           
                             {
-                                name: 'toppings',
-                                category: [
-                                    {
-                                        name: 'veggie',
-                                        price: 2.99,
-                                        items: [
-                                            'broccoli', 'mush'
-                                        ]
-                                    },
-                                    {
-                                        name: 'meat',
-                                        price: 2.99,
-                                        items: [
-                                            'roni', 'meatball'
-                                        ]
-                                    }
+                                name: 'veggie toppings',
+                                price: 2.99,
+                                items: [
+                                    'broccoli', 'mush'
                                 ]
-                                
-                            }
+                            },
+                            {
+                                name: 'meat toppings',
+                                price: 2.99,
+                                items: [
+                                    'roni', 'meatball'
+                                ]
+                            }                            
                         ]
                     },
                 ]
@@ -482,18 +608,37 @@ export const restaurants = [
                                 price: 9.99,
                                 priceArr: []
                             }
+                        ],
+                        mods: [                           
+                                                       
                         ]
                     },
                     {
-                        name: 'salads',
-                        description: 'Served with 2 rolls',
+                        name: 'Subs',
+                        description: '',
                         items: [
                             {
-                                name: 'Garden salad',
+                                name: 'House philly steak',
                                 description: 'Iceberg and romaine lettuce, hard boiled egg, tomato, onion, cucumber, carrots black olives and pepperoncini',
                                 price: 9.99,
                                 priceArr: []
                             }
+                        ],
+                        mods: [                           
+                            {
+                                name: 'veggie toppings',
+                                price: 2.99,
+                                items: [
+                                    'broccoli', 'mush'
+                                ]
+                            },
+                            {
+                                name: 'meat toppings',
+                                price: 2.99,
+                                items: [
+                                    'roni', 'meatball'
+                                ]
+                            }                            
                         ]
                     },
                 ]
@@ -564,27 +709,32 @@ export const restaurants = [
                                 ]
                             },
                         ],
-                        modifiers: [
+                        mods: [                           
                             {
-                                name: 'toppings',
-                                category: [
-                                    {
-                                        name: 'veggie',
-                                        price: 2.99,
-                                        items: [
-                                            'broccoli', 'mush'
-                                        ]
-                                    },
-                                    {
-                                        name: 'meat',
-                                        price: 2.99,
-                                        items: [
-                                            'roni', 'meatball'
-                                        ]
-                                    }
+                                name: 'veggie toppings',
+                                price: 2.99,
+                                items: [
+                                    'broccoli', 'mush', 'broccoli', 'mush',
+                                    'broccoli', 'mush', 'broccoli', 'mush',
+                                    'broccoli', 'mush', 'broccoli', 'mush',
                                 ]
-                                
-                            }
+                            },
+                            {
+                                name: 'meat toppings',
+                                price: 2.99,
+                                items: [
+                                    'roni', 'meatball'
+                                ]
+                            },                            
+                            {
+                                name: 'veggie toppings',
+                                price: 2.99,
+                                items: [
+                                    'broccoli', 'mush', 'broccoli', 'mush',
+                                    'broccoli', 'mush', 'broccoli', 'mush',
+                                    'broccoli', 'mush', 'broccoli', 'mush',
+                                ]
+                            },                        
                         ]
                     },
                 ]

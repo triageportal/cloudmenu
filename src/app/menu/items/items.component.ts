@@ -12,9 +12,11 @@ import { HeaderService } from '../../header/header.service';
 export class ItemsComponent implements OnInit {
 
   items: any;
-  submenu: string;
+  submenuName: string;
   subDescription: string;
   flaggedItems: boolean;
+  show = false;
+  submenu: any;
 
   constructor(private headerService: HeaderService, private menuService: MenuService, private router: Router, private route: ActivatedRoute) { }
 
@@ -26,12 +28,13 @@ export class ItemsComponent implements OnInit {
         params => {
           if (params['mode'] == 'flags') {
             this.items = this.menuService.getFlagedItems();
-            this.submenu = 'Your bookmarked items'
+            this.submenuName = 'Your bookmarked items'
             this.flaggedItems = true;
           } else {
             this.flaggedItems = false;
             this.items = this.menuService.getItems();
-            this.submenu = this.menuService.getSubmenuName();
+            this.submenu = this.menuService.getSubmenu();
+            this.submenuName = this.submenu.name;
             this.subDescription = this.menuService.getSubDescription()
           }
         }
@@ -64,6 +67,14 @@ export class ItemsComponent implements OnInit {
     this.items[itemIndex]['flag'] = false;
     const totalFlagedItems = this.menuService.removeFlag(flagedIndex);
     this.headerService.flagsSource.next(totalFlagedItems);
+  }
+
+  modsModal(){
+    this.show = true
+    console.log(this.show);
+    
+    console.log(this.submenu);
+    
   }
 
 }

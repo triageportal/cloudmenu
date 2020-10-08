@@ -17,7 +17,7 @@ export class SubMenusComponent implements OnInit {
     if (this.menuService.menuTypeIndex == undefined) {
       this.router.navigate(['./../'], {relativeTo: this.route})
     } else {
-      this.submenus = this.menuService.getSubmenu();   
+      this.submenus = this.menuService.getSubmenus();   
     }
     this.headerService.backButtonSource.next(true);
   }

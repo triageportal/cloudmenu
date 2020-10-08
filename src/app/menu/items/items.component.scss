@@ -1,6 +1,8 @@
 @import './../../../variable.scss';
 
-.title {
+.sub-header {
+    position: relative;
+  .title {
     font-size: 26px;
     font-weight: 400;
     border-bottom: 2px solid $theme-color;
@@ -10,85 +12,172 @@
     padding-left: 20px;
     margin-left: -20px;
     text-transform: capitalize;
-    .description {
-        font-size: 13px;
+
+    .mods {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        right: 9px;
+        height: 22px;
+        width: 22px;
+        background: url(./../../../assets/icons/more-vertical.svg) no-repeat;
+        background-size: cover;
+        cursor: pointer;
+      }
     }
+
+    .description {
+      font-size: 13px;
+    }
+  }
+}
+
+.items-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 0;
+
+  &>li {
+    padding: 20px 10px 5px 10px;
+    border-bottom: 1px solid $theme-color;
+    position: relative;
+    color: $gray;
+
+    .item {
+      .name {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: $gray;
+
+        div {
+          &:first-child {
+            font-size: 19px;
+            font-weight: 500;
+          }
+        }
+
+        .price {
+          margin-right: 40px;
+        }
+
+        span {
+          &.checked::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0%, - 50%);
+            height: 22px;
+            width: 22px;
+            background: url(./../../../assets/icons/check-square.svg) no-repeat;
+            background-size: cover;
+            cursor: pointer;
+          }
+
+          &.unchecked::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 2px;
+            transform: translate(0%, - 50%);
+            height: 14px;
+            width: 14px;
+            border: 2px solid $theme-color;
+            border-radius: 3px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .description {
+        font-size: 15px;
+        color: $light-gray;
+        padding: 5px 0;
+      }
+
+      .price-list {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 5px;
+
+        span {
+          &:first-child {
+            font-size: 13px;
+            font-weight: 600;
+            margin-right: 20px;
+          }
+
+          &:last-child {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+  }
 }
 
 
-.items-list {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 0;
-    &>li {
-        padding: 20px 10px 5px 10px;
-        border-bottom: 1px solid $theme-color;
-        position: relative;
-        color: $gray;
-        .item {
-            .name {
-                position: relative;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                color: $gray;
-                div {
-                    &:first-child {
-                        font-size: 19px;
-                        font-weight: 500;
-                    }
-                }
-                .price {
-                    margin-right: 40px;
-                }
-                span {
-                    &.checked::after {
-                        content: '';
-                        position: absolute;
-                        top: 50%;
-                        right: 0;
-                        transform: translate(0%, - 50%);
-                        height: 22px;
-                        width: 22px;
-                        background: url(./../../../assets/icons/check-square.svg) no-repeat;
-                        background-size: cover;
-                        cursor: pointer;
-                    }  
-                    &.unchecked::after {
-                        content: '';
-                        position: absolute;
-                        top: 50%;
-                        right: 2px;
-                        transform: translate(0%, - 50%);
-                        height: 14px;
-                        width: 14px;
-                        border: 2px solid $theme-color;
-                        border-radius: 3px;
-                        cursor: pointer;
-                    }  
-                }
-            }
-            .description {
-                font-size: 15px;
-                color: $light-gray;
-                padding: 5px 0;
-            }
-            .price-list {
-                list-style-type: none;
-                padding: 0;
-                margin-top: 5px;
-                span {
-                    &:first-child {
-                        font-size: 13px;
-                        font-weight: 600;
-                        margin-right: 20px;
-                    }
-                    &:last-child {
-                        font-size: 14px;
-                    }
-                }
-            }
-        }
-        
-    }
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 100; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
   }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; 
+    padding: 30px 16px;
+    border: 1px solid #888;
+    width: 80%; 
+    position: relative;
+    text-transform: capitalize;
+    color: $light-gray;
+    &>div {    
+        border-bottom: 1px solid $theme-color;
+        margin-bottom: 10px;
+    }
+    .close {
+        &::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            height: 22px;
+            width: 22px;
+            background: url(./../../../assets/icons/close.svg) no-repeat;
+            background-size: cover;
+            cursor: pointer;
+        }
+    }
+
+    .mods-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0;
+        div {
+            &:first-child {
+                font-size: 20px;
+                color: $theme-color;
+            }
+
+        }
+    }
+
+    .mods-items {
+        margin-bottom: 10px;
+    }
+
+}

@@ -1,26 +1,46 @@
-<div class="title">
-    <div>{{submenu}}</div>
+<div class="sub-header">
+  <div class="title">
+    <div>
+      {{submenuName}}
+      <div class="mods" (click)="modsModal()"></div>
+    </div>
     <div *ngIf="subDescription" class="description">{{subDescription}}</div>
+  </div>
 </div>
+<ul class="items-list">
+  <li *ngFor="let item of items; let i = index">
+    <div class="item">
+      <div class="name">
+        <div>{{item.name}}<span (click)="flagItem(item)" [ngClass]="item.flag ? 'checked' : 'unchecked'"></span></div>
+        <div class="price" *ngIf="item.price">{{item.price | currency: 'USD'}}</div>
 
-<ul  class="items-list">
-    <li *ngFor="let item of items; let i = index" >
-        <div class="item">
-            <div class="name">
-                <div>{{item.name}}<span (click)="flagItem(item)" [ngClass]="item.flag ? 'checked' : 'unchecked'"></span></div>
-                <div class="price" *ngIf="item.price">{{item.price | currency: 'USD'}}</div>
-                
-            </div>
-            <div class="description">{{item.description}}</div>
-            <div class="prices" *ngIf="item.priceArr?.length > 0">
-                <ul class="price-list">
-                    <li *ngFor="let price of item.priceArr">
-                        <span>{{price.size}}</span>
-                        <span>{{price.amount | currency: 'USD'}}</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        
-    </li>
+      </div>
+      <div class="description">{{item.description}}</div>
+      <div class="prices" *ngIf="item.priceArr?.length > 0">
+        <ul class="price-list">
+          <li *ngFor="let price of item.priceArr">
+            <span>{{price.size}}</span>
+            <span>{{price.amount | currency: 'USD'}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </li>
 </ul>
+
+
+<div class="modal" [ngStyle]="{'display': show ? 'block' : 'none'}">
+  <div class="modal-content">
+    <span class="close" (click)="show=false"></span>
+    <div *ngFor="let mod of submenu?.mods">
+      <div class="mods-header">
+        <div>{{mod.name}}</div>
+        <div *ngIf="mod.price">{{mod.price | currency: 'USD'}}</div>
+      </div>
+      <div class="mods-items">
+          <span *ngFor="let item of mod.items">{{item}}, </span>
+      </div>
+    </div>
+  </div>
+</div>
