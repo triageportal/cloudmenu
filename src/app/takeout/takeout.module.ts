@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TakeoutRoutingModule } from './takeout-routing.module';
 import { TakeoutComponent } from './takeout/takeout.component';
 import { HeaderModule } from '../header/header.module';
+import { FooterModule } from '../footer/footer.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { HeaderModule } from '../header/header.module';
   imports: [
     CommonModule,
     TakeoutRoutingModule,
-    HeaderModule
+    HeaderModule,
+    FooterModule
   ]
 })
 export class TakeoutModule { }

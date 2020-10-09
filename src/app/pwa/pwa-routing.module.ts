@@ -13,6 +13,7 @@ const routes: Routes = [
       { path: 'restaurants', component: RestaurantsComponent },
       { path: 'specials', component: DailySpecialsComponent},
       { path: 'menu', loadChildren: () => import('./../menu/menu.module').then(m => m.MenuModule) }, 
+      { path: 'info', loadChildren: () => import('./../info/info.module').then(m => m.InfoModule) }
     ]
   }
 ];

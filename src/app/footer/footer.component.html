@@ -1,0 +1,12 @@
+<div class="footer">
+    <div class="icon info" *ngIf="footerBtns.info"  (click)="goInfo()"></div>
+    <div class="icon phone" *ngIf="footerBtns.phone"></div>
+    <div class="icon globe" *ngIf="footerBtns.web"></div>
+    <div class="icon mail" *ngIf="footerBtns.mail"></div>
+    <div class="icon bell" *ngIf="footerBtns.bell"></div>
+    <div class="icon bill" *ngIf="footerBtns.bill"></div>
+    <div class="icon save" *ngIf="footerBtns.save"></div>
+    <div class="icon eye" *ngIf="footerBtns.view"></div>
+    <div class="icon cloud" *ngIf="footerBtns.cloud"></div>
+    <div class="daily-specials" [ngStyle]="{'display': footerBtns.dailySpecials ? 'flex' : 'none'}" (click)="goDailySpecials()">Daily Specials</div>
+  </div>

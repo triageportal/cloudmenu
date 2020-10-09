@@ -1,6 +1,4 @@
-<div class="frame">
-    <app-header></app-header>
-      <div class="main">
+
         <div class="info">
             <div class="map">
                 <div>{{restaurant.info.street}}</div>
@@ -18,10 +16,4 @@
                 </div>
             </div>
         </div> 
-      </div>
-      <div class="footer">
-        <div class="icon globe" ></div>
-        <a [href]="'mailto:' + restaurant.info.email"><div class="icon mail" ></div></a>
-        <a [href]="'tel:' + restaurant.info.phone" (click)="goFlagedItems()"><div class="icon phone"></div></a>
-      </div>
-    </div>
+

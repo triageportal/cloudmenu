@@ -9,6 +9,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'menu', pathMatch: 'full' },
       { path: 'menu', loadChildren: () => import('./../menu/menu.module').then(m => m.MenuModule) }, 
+      { path: 'info', loadChildren: () => import('./../info/info.module').then(m => m.InfoModule) } 
     ]
   }
 ];

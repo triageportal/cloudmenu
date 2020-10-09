@@ -2,6 +2,7 @@ import { MenuService } from './../../menu/menu.service';
 import { HeaderService } from './../../header/header.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FooterService } from '../../footer/footer.service';
 
 @Component({
   selector: 'app-daily-specials',
@@ -14,21 +15,16 @@ export class DailySpecialsComponent implements OnInit {
   flaggedItems: boolean;
   restaurants: any;
 
-  constructor(private headerService: HeaderService, private menuService: MenuService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private headerService: HeaderService, private footerService: FooterService, private menuService: MenuService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.headerService.headerTitleSource.next('Daily Specials')
     this.headerService.backButtonSource.next(true);
     this.restaurants = this.menuService.getRestaurants();
     console.log(this.restaurants);
-    
+    this.footerService.hideFooterBtns();
   }
 
-  ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.headerService.footerButtonsSource.next(false)
-    })
-  }
 
   flagItem(item, restaurantIndex) {
 

@@ -2,6 +2,7 @@ import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@
 import { MenuService } from '../../menu/menu.service';
 import { HeaderService } from '../../header/header.service';
 import { Router } from '@angular/router';
+import { FooterService } from '../../footer/footer.service';
 
 @Component({
   selector: 'app-pwa',
@@ -14,20 +15,11 @@ export class PwaComponent implements OnInit {
   dailySpecials = true;
   footerButtons = true;
   
-  constructor(private router: Router ,private menuService: MenuService, private headerService: HeaderService) { }
+  constructor(private footerService: FooterService, private router: Router ,private menuService: MenuService, private headerService: HeaderService) { }
 
   ngOnInit(): void {
     this.restaurant = this.menuService.restaurant;
-    this.headerService.dailySpecialsObservable.subscribe(
-      result => {
-        this.dailySpecials = result;
-      }
-    )
-    this.headerService.footerButtonsObservable.subscribe(
-      result => {
-        this.footerButtons = result;
-      }
-    )
+    
   }
 
   goDailySpecials() {

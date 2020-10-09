@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DiningRoutingModule } from './dining-routing.module';
 import { DiningComponent } from './dining/dining.component';
 import { HeaderModule } from '../header/header.module';
+import { FooterModule } from '../footer/footer.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { HeaderModule } from '../header/header.module';
   imports: [
     CommonModule,
     DiningRoutingModule,
-    HeaderModule
+    HeaderModule,
+    FooterModule
   ]
 })
 export class DiningModule { }

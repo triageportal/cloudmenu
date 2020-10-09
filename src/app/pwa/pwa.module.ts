@@ -6,6 +6,7 @@ import { PwaComponent } from './pwa/pwa.component';
 import { HeaderModule } from '../header/header.module';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { DailySpecialsComponent } from './daily-specials/daily-specials.component';
+import { FooterModule } from '../footer/footer.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { DailySpecialsComponent } from './daily-specials/daily-specials.componen
   imports: [
     CommonModule,
     PwaRoutingModule,
-    HeaderModule
+    HeaderModule,
+    FooterModule
   ]
 })
 export class PwaModule { }
