@@ -23,7 +23,6 @@ export class SubMenusComponent implements OnInit {
   }
 
   goItems(submenuIndex) {
-    console.log(submenuIndex); 
     this.menuService.submenuIndex = submenuIndex;
     this.router.navigate(['../items'], { relativeTo: this.route })
   }

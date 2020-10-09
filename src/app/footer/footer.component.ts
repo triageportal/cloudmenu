@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FooterService } from './footer.service';
+import { MenuService } from '../menu/menu.service';
 
 @Component({
   selector: 'app-footer',
@@ -10,10 +11,12 @@ import { FooterService } from './footer.service';
 export class FooterComponent implements OnInit {
 
   footerBtns: any;
+  restaurant: any;
 
-  constructor(private router: Router, private footerService: FooterService) { }
+  constructor(private router: Router, private footerService: FooterService, private menuService: MenuService) { }
 
   ngOnInit(): void {
+    this.restaurant = this.menuService.restaurant;
     this.footerBtns = this.footerService.footerBtns;
     this.footerService.footerButtonsObservable.subscribe(
       result => {
@@ -29,7 +32,17 @@ export class FooterComponent implements OnInit {
   goInfo() {
     let urls = this.router.url.split('/');
     if (!this.router.url.includes('info')){
+      console.log(urls[1]);
+      
       this.router.navigate([`${urls[1]}/info`]) 
+    }
+  }
+
+  goFlagedItems() {
+    const urls = this.router.url.split('/');
+    const flagedItems = this.menuService.getFlagedItems();
+    if (flagedItems.length > 0 && !this.router.url.includes('flags')){
+      this.router.navigate([`${urls[1]}/menu/items/flags`]) 
     }
   }
 

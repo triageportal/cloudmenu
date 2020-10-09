@@ -16,7 +16,6 @@ export class MenuTypesComponent implements OnInit {
   ngOnInit(): void {
     this.setBackButton();
     this.menus = this.menuService.getMenus();
-    console.log(this.menuService.menus);
   }
 
   setBackButton() {

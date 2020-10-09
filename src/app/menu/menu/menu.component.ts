@@ -22,12 +22,10 @@ export class MenuComponent implements OnInit {
   }
   setFooterBtns() {
     const url = this.router.url.split('/');
-    console.log(url);
-    
     switch (url[1]) {
-      case 'pwa': this.footerService.showPwaBtns();console.log(url[1]); break;
-      case 'takeout': this.footerService.showTakeoutBtns();console.log(url[1]); break;
-      case 'dining': this.footerService.showDiningBtns();console.log(url[1]); break;    
+      case 'pwa': this.footerService.showPwaBtns(); break;
+      case 'takeout': this.footerService.showTakeoutBtns(); break;
+      case 'dining': this.footerService.showDiningBtns(); break;    
     }
   }
 

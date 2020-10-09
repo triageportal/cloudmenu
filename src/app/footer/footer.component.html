@@ -1,12 +1,12 @@
 <div class="footer">
-    <div class="icon info" *ngIf="footerBtns.info"  (click)="goInfo()"></div>
-    <div class="icon phone" *ngIf="footerBtns.phone"></div>
-    <div class="icon globe" *ngIf="footerBtns.web"></div>
-    <div class="icon mail" *ngIf="footerBtns.mail"></div>
-    <div class="icon bell" *ngIf="footerBtns.bell"></div>
-    <div class="icon bill" *ngIf="footerBtns.bill"></div>
-    <div class="icon save" *ngIf="footerBtns.save"></div>
-    <div class="icon eye" *ngIf="footerBtns.view"></div>
-    <div class="icon cloud" *ngIf="footerBtns.cloud"></div>
+    <a *ngIf="footerBtns.info"><div class="icon info"  (click)="goInfo()"></div></a>
+    <a [href]="'tel:' + restaurant.info.tel" *ngIf="footerBtns.phone"><div class="icon phone" (click)=goFlagedItems()></div></a>
+    <a [href]="'http:' + restaurant.info.web" *ngIf="footerBtns.web"><div class="icon globe"></div></a>
+    <a [href]="'mailto:' + restaurant.info.mail" *ngIf="footerBtns.mail"><div class="icon mail"></div></a>
+    <a *ngIf="footerBtns.bell"><div class="icon bell"></div></a>
+    <a *ngIf="footerBtns.bill"><div class="icon bill"></div></a>
+    <a *ngIf="footerBtns.save"><div class="icon save"></div></a>
+    <a *ngIf="footerBtns.view"><div class="icon eye"></div></a>
+    <a *ngIf="footerBtns.cloud"><div class="icon cloud"></div></a>
     <div class="daily-specials" [ngStyle]="{'display': footerBtns.dailySpecials ? 'flex' : 'none'}" (click)="goDailySpecials()">Daily Specials</div>
   </div>
