@@ -238,5 +238,30 @@ html {
       background-size: cover;
     }
 
+    &.home::after {
+      background: url(./assets/icons/home.svg) no-repeat;
+      background-size: cover;
+    }
+
+    &.globe::after {
+      background: url(./assets/icons/globe.svg) no-repeat;
+      background-size: cover;
+    }
+
+    &.mail::after {
+      background: url(./assets/icons/mail.svg) no-repeat;
+      background-size: cover;
+    }
+
+    &.map::after {
+      background: url(./assets/icons/map.svg) no-repeat;
+      background-size: cover;
+    }
+
+    &.map-pin::after {
+      background: url(./assets/icons/map-pin.svg) no-repeat;
+      background-size: cover;
+    }
+
   }
 }

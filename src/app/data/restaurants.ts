@@ -2,7 +2,7 @@ export const restaurants = [
     {
         name: 'Buongiorno',
         info: {
-            address: {},
+            street: {},
             phone: '',
             web: '',
             email: '',
@@ -176,7 +176,7 @@ export const restaurants = [
     {
         name: 'Allora Pizza & Pasta',
         info: {
-            address: {},
+            street: {},
             phone: '',
             web: '',
             email: '',
@@ -398,7 +398,7 @@ export const restaurants = [
     {
         name: 'Uncle Joe\'s',
         info: {
-            address: {},
+            street: {},
             phone: '',
             web: '',
             email: '',
@@ -572,11 +572,22 @@ export const restaurants = [
     {
         name: 'La Fogata',
         info: {
-            address: {},
-            phone: '',
-            web: '',
-            email: '',
-            hours: '',
+            street: '800 Lighthouse dr',
+            city: 'North Palm Beach',
+            zipcode: '33410',
+            state: 'Florida',
+            phone: '(561) 296-9295',
+            website: 'lafogata.com',
+            email: 'info@lafogata.com',
+            hours: [
+                '11am - 10pm',
+                '11am - 10pm',
+                '11am - 10pm',
+                '11am - 10pm',
+                '11am - 11pm',
+                '11am - 11pm',
+                'Closed',
+            ],
             social: [
                 {
                     name: 'twitter',

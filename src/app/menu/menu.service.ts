@@ -21,6 +21,10 @@ export class MenuService {
     return this.restaurants
   }
   
+  getRestaurant () {
+    return this.restaurants
+  }
+  
   getMenus() {
     return this.restaurant.menus;
   }

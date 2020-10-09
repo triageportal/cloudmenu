@@ -1,0 +1,27 @@
+<div class="frame">
+    <app-header></app-header>
+      <div class="main">
+        <div class="info">
+            <div class="map">
+                <div>{{restaurant.info.street}}</div>
+                <div>{{restaurant.info.city}}</div>
+                <div>{{restaurant.info.zipcode}}</div>
+                <div>{{restaurant.info.state}}</div>
+            </div>
+            <div class="phone">{{restaurant.info.phone}}</div>
+            <div class="mail">{{restaurant.info.email}}</div>
+            <div class="globe">{{restaurant.info.website}}</div>
+            <div class="hours">
+                <div *ngFor="let day of week; let i=index">
+                    <span>{{day}}: </span>
+                <span>{{restaurant.info.hours[i]}}</span>
+                </div>
+            </div>
+        </div> 
+      </div>
+      <div class="footer">
+        <div class="icon globe" ></div>
+        <a [href]="'mailto:' + restaurant.info.email"><div class="icon mail" ></div></a>
+        <a [href]="'tel:' + restaurant.info.phone" (click)="goFlagedItems()"><div class="icon phone"></div></a>
+      </div>
+    </div>

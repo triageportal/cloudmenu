@@ -7,7 +7,8 @@ const routes: Routes = [
   { path: 'menu', loadChildren: () => import('./menu/menu.module').then(m => m.MenuModule) }, 
   { path: 'takeout', loadChildren: () => import('./takeout/takeout.module').then(m => m.TakeoutModule) },
   { path: 'dining', loadChildren: () => import('./dining/dining.module').then(m => m.DiningModule) },
-  { path: 'pwa', loadChildren: () => import('./pwa/pwa.module').then(m => m.PwaModule) }];
+  { path: 'pwa', loadChildren: () => import('./pwa/pwa.module').then(m => m.PwaModule) },
+  { path: 'info', loadChildren: () => import('./info/info.module').then(m => m.InfoModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {useHash: true})],
