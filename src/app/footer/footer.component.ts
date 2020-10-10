@@ -11,16 +11,22 @@ import { MenuService } from '../menu/menu.service';
 export class FooterComponent implements OnInit {
 
   footerBtns: any;
+  restaurantInfo: any;
   restaurant: any;
 
   constructor(private router: Router, private footerService: FooterService, private menuService: MenuService) { }
 
   ngOnInit(): void {
-    this.restaurant = this.menuService.restaurant;
     this.footerBtns = this.footerService.footerBtns;
     this.footerService.footerButtonsObservable.subscribe(
       result => {
         this.footerBtns = result;
+      }
+    )
+    this.restaurantInfo = this.menuService.restaurant.info;
+    this.menuService.restaurantInfoObservable.subscribe(
+      result => {
+        this.restaurantInfo = result
       }
     )
   }

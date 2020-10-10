@@ -27,6 +27,7 @@ export class RestaurantsComponent implements OnInit {
     this.headerService.headerTitleSource.next(restaurant.name);
     this.footerService.showPwaBtns();
     this.router.navigate(['../menu'], { relativeTo: this.route })
+    this.menuService.restaurantInfoSource.next(restaurant.info)
   }
 
 

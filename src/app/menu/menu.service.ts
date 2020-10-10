@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { restaurant } from '../data/restaurant';
 import { restaurants } from '../data/restaurants';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,13 +16,10 @@ export class MenuService {
   flagedItems = {};
 
   constructor() { 
+    this.restaurantInfoSource.next(this.restaurant)
   }
 
   getRestaurants () {
-    return this.restaurants
-  }
-  
-  getRestaurant () {
     return this.restaurants
   }
   
@@ -54,6 +52,9 @@ export class MenuService {
     return submenu[this.submenuIndex]['items'];
   }
 
+  restaurantInfoSource = new Subject<any>();
+  restaurantInfoObservable = this.restaurantInfoSource.asObservable();
+
   /***** Flaged items *****/
 
   getFlagedIndex(name, restaurantName = this.restaurant.name){
@@ -79,7 +80,7 @@ export class MenuService {
   }
 
   getFlagedItems() {
-    return this.flagedItems[this.restaurant.name];
+    return this.flagedItems[this.restaurant.name] || [];
   }
 
 
