@@ -1,8 +1,8 @@
-import { HeaderService } from '../../header/header.service';
+import { HeaderService } from '../header/header.service';
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../menu/menu.service';
 import { Router } from '@angular/router';
-import { FooterService } from '../../footer/footer.service';
+import { FooterService } from '../footer/footer.service';
 
 @Component({
   selector: 'app-info',

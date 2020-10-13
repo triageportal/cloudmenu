@@ -1,7 +1,7 @@
-import { HeaderService } from '../../../header/header.service';
+import { HeaderService } from '../../header/header.service';
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../menu.service';
-import { FooterService } from '../../../footer/footer.service';
+import { FooterService } from '../../footer/footer.service';
 import { Router } from '@angular/router';
 
 @Component({

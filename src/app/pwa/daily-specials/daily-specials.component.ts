@@ -1,8 +1,8 @@
 import { MenuService } from '../../shared/menu/menu.service';
-import { HeaderService } from './../../header/header.service';
+import { HeaderService } from '../../shared/header/header.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FooterService } from '../../footer/footer.service';
+import { FooterService } from '../../shared/footer/footer.service';
 
 @Component({
   selector: 'app-daily-specials',

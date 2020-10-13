@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuService } from '../shared/menu/menu.service';
+import { MenuService } from '../menu/menu.service';
 import {Location} from '@angular/common';
 import { HeaderService } from './header.service';
 import { log } from 'util';

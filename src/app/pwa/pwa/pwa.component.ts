@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
 import { MenuService } from '../../shared/menu/menu.service';
-import { HeaderService } from '../../header/header.service';
+import { HeaderService } from '../../shared/header/header.service';
 import { Router } from '@angular/router';
-import { FooterService } from '../../footer/footer.service';
+import { FooterService } from '../../shared/footer/footer.service';
 
 @Component({
   selector: 'app-pwa',

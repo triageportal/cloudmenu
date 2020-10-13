@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { InfoRoutingModule } from './info-routing.module';
 import { InfoComponent } from './info.component';
-import { HeaderModule } from '../../header/header.module';
+import { HeaderModule } from '../header/header.module';
 
 
 @NgModule({

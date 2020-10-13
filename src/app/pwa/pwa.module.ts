@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { PwaRoutingModule } from './pwa-routing.module';
 import { PwaComponent } from './pwa/pwa.component';
-import { HeaderModule } from '../header/header.module';
+import { HeaderModule } from '../shared/header/header.module';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { DailySpecialsComponent } from './daily-specials/daily-specials.component';
-import { FooterModule } from '../footer/footer.module';
+import { FooterModule } from '../shared/footer/footer.module';
 
 
 @NgModule({
