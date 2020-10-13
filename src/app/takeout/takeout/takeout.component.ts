@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuService } from '../../menu/menu.service';
+import { MenuService } from '../../shared/menu/menu.service';
 
 @Component({
   selector: 'app-takeout',

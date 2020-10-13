@@ -12,8 +12,8 @@ const routes: Routes = [
       { path: '', redirectTo: 'restaurants', pathMatch: 'full' },
       { path: 'restaurants', component: RestaurantsComponent },
       { path: 'specials', component: DailySpecialsComponent},
-      { path: 'menu', loadChildren: () => import('./../menu/menu.module').then(m => m.MenuModule) }, 
-      { path: 'info', loadChildren: () => import('./../info/info.module').then(m => m.InfoModule) }
+      { path: 'menu', loadChildren: () => import('../shared/menu/menu.module').then(m => m.MenuModule) }, 
+      { path: 'info', loadChildren: () => import('../shared/info/info.module').then(m => m.InfoModule) }
     ]
   }
 ];

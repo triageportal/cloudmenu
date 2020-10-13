@@ -8,8 +8,8 @@ const routes: Routes = [
     component: DiningComponent,
     children: [
       { path: '', redirectTo: 'menu', pathMatch: 'full' },
-      { path: 'menu', loadChildren: () => import('./../menu/menu.module').then(m => m.MenuModule) }, 
-      { path: 'info', loadChildren: () => import('./../info/info.module').then(m => m.InfoModule) } 
+      { path: 'menu', loadChildren: () => import('../shared/menu/menu.module').then(m => m.MenuModule) }, 
+      { path: 'info', loadChildren: () => import('../shared/info/info.module').then(m => m.InfoModule) } 
     ]
   }
 ];

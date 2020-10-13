@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { restaurant } from '../data/restaurant';
-import { restaurants } from '../data/restaurants';
+import { restaurant } from '../../data/restaurant';
+import { restaurants } from '../../data/restaurants';
 import { Subject } from 'rxjs';
 
 @Injectable({

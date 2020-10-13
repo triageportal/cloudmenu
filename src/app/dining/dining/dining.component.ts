@@ -1,4 +1,4 @@
-import { MenuService } from './../../menu/menu.service';
+import { MenuService } from '../../shared/menu/menu.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

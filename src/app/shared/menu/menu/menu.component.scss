@@ -1,5 +1,5 @@
 
-@import './../../../variable.scss';
+@import './../../../../variable.scss';
 ul {
     list-style-type: none;
     padding: 0;
@@ -20,7 +20,7 @@ ul {
             transform: translate(-50%, - 50%);
             height: 22px;
             width: 22px;
-            background: url(./../../../assets/icons/chevron-right.svg) no-repeat;
+            background: url(./../../../../assets/icons/chevron-right.svg) no-repeat;
             background-size: cover;
            }
         &:last-child {

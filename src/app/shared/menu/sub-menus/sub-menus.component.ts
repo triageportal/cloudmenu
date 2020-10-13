@@ -1,4 +1,4 @@
-import { HeaderService } from './../../header/header.service';
+import { HeaderService } from '../../../header/header.service';
 import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../menu.service';
 import { ActivatedRoute, Router } from '@angular/router';

@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
-import { MenuService } from '../../menu/menu.service';
+import { MenuService } from '../../shared/menu/menu.service';
 import { HeaderService } from '../../header/header.service';
 import { Router } from '@angular/router';
 import { FooterService } from '../../footer/footer.service';

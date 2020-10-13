@@ -1,4 +1,4 @@
-@import './../../variable.scss';
+@import './../../../variable.scss';
 
 .info {
   margin: 0 auto;
@@ -18,7 +18,7 @@
           left: -29px;
           height: 22px;
           width: 22px;
-          background: url(./../../assets/icons/map.svg) no-repeat;
+          background: url(./../../../assets/icons/map.svg) no-repeat;
           background-size: cover;
         }
     }
@@ -32,7 +32,7 @@
           left: -29px;
           height: 22px;
           width: 22px;
-          background: url(./../../assets/icons/phone.svg) no-repeat;
+          background: url(./../../../assets/icons/phone.svg) no-repeat;
           background-size: cover;
         }
     }
@@ -46,7 +46,7 @@
           left: -29px;
           height: 22px;
           width: 22px;
-          background: url(./../../assets/icons/mail.svg) no-repeat;
+          background: url(./../../../assets/icons/mail.svg) no-repeat;
           background-size: cover;
         }
     }
@@ -60,7 +60,7 @@
           left: -29px;
           height: 22px;
           width: 22px;
-          background: url(./../../assets/icons/globe.svg) no-repeat;
+          background: url(./../../../assets/icons/globe.svg) no-repeat;
           background-size: cover;
         }
     }
@@ -79,7 +79,7 @@
           left: -29px;
           height: 22px;
           width: 22px;
-          background: url(./../../assets/icons/clock.svg) no-repeat;
+          background: url(./../../../assets/icons/clock.svg) no-repeat;
           background-size: cover;
         }
     }

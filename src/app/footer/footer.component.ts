@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FooterService } from './footer.service';
-import { MenuService } from '../menu/menu.service';
+import { MenuService } from '../shared/menu/menu.service';
 
 @Component({
   selector: 'app-footer',
