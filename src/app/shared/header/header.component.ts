@@ -40,7 +40,15 @@ export class HeaderComponent implements OnInit {
 
 
   goBack() {
-    this.location.back();
+    const urls = this.router.url.split('/');
+    const last = urls[urls.length - 1];
+    switch (last) {
+      case 'flags':   this.router.navigate([`${urls[1]}/menu/items`]); break;
+      case 'items':   this.router.navigate([`${urls[1]}/menu/submenus`]); break;
+      case 'submenus':   this.router.navigate([`${urls[1]}/menu`]); break;
+      case 'menu':   this.router.navigate([`${urls[1]}/restaurants`]); break;
+      case 'specials':   this.router.navigate([`${urls[1]}/restaurants`]); break;
+    }
   }
 
   goFlagedItems() {
