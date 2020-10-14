@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   headerTitle = 'Cloud Menu';
   flags: number;
   backButton = false;
+  loader = false;
 
   constructor(private route: ActivatedRoute ,private router: Router ,private menuService: MenuService, private location: Location, private headerService: HeaderService) { }
 
@@ -35,6 +36,10 @@ export class HeaderComponent implements OnInit {
       result => {
         this.headerTitle = result;
       }
+    )
+
+    this.headerService.loaderObservable.subscribe(
+      result => this.loader = result
     )
   }
 

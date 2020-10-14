@@ -16,7 +16,17 @@ constructor() { }
   
   headerTitleSource = new Subject<any>();
   headerTitleObservable = this.headerTitleSource.asObservable();
+
+  loaderSource = new Subject<any>();
+  loaderObservable = this.loaderSource.asObservable();
   
+  loaderOn() {
+    this.loaderSource.next(true)
+  }
+  
+  loaderOff() {
+    this.loaderSource.next(false)
+  }
 
 
 }
