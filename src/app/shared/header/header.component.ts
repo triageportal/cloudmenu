@@ -48,6 +48,7 @@ export class HeaderComponent implements OnInit {
       case 'submenus':   this.router.navigate([`${urls[1]}/menu`]); break;
       case 'menu':   this.router.navigate([`${urls[1]}/restaurants`]); break;
       case 'specials':   this.router.navigate([`${urls[1]}/restaurants`]); break;
+      case 'info':   this.router.navigate([`${urls[1]}/menu`]); break;
     }
   }
 
