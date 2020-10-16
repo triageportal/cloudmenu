@@ -1,0 +1,17 @@
+<div class="frame">
+    <app-header></app-header>
+      <div class="main">
+          <ng-container *ngIf="emailRequest" >
+          
+        <div class="title">Please enter your email</div>
+          <div class="input-wrap">
+              <div class="input">
+                <input type="text" [(ngModel)]="email" placeholder=" ">
+                <label class="label">Email</label>
+                </div>
+                <!-- <div>-></div> -->
+          </div>
+        </ng-container>
+      </div>
+      <app-footer></app-footer>
+    </div>

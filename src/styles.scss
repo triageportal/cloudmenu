@@ -298,5 +298,10 @@ html {
       background-size: cover;
     }
 
+    &.arrow-right::after {
+      background: url(./assets/icons/arrow-right.svg) no-repeat;
+      background-size: cover;
+    }
+
   }
 }

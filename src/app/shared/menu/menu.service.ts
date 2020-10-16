@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { restaurant } from '../../data/restaurant';
 import { restaurants } from '../../data/restaurants';
 import { Subject } from 'rxjs';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +11,16 @@ export class MenuService {
 
   restaurant = restaurant;
   restaurants = restaurants;
+  restaurantsList = [];
   menus: any[];
   menuTypeIndex: any;
   submenuIndex: any;
   flagedItems = {};
+  email: string;
+  url = 'back.api';
 
-  constructor() { 
-    this.restaurantInfoSource.next(this.restaurant)
+  constructor( private http: HttpClient) { 
+    this.restaurantSource.next(this.restaurant)
   }
 
   getRestaurants () {
@@ -52,8 +56,23 @@ export class MenuService {
     return submenu[this.submenuIndex]['items'];
   }
 
-  restaurantInfoSource = new Subject<any>();
-  restaurantInfoObservable = this.restaurantInfoSource.asObservable();
+  getRestaurant(hash, id) {
+    let params = new HttpParams().set('hash', hash).set('id', id);
+    return this.http.get<any>(this.url, {params: params});
+  }
+
+  getRestaurantsList(email) {
+    let params = new HttpParams().set('email', email);
+    return this.http.get<any>(this.url, {params: params});
+  }
+
+  setRestaurant(restaurant) {
+    this.restaurant = restaurant;
+    this.restaurantSource.next(restaurant)
+  }
+
+  restaurantSource = new Subject<any>();
+  restaurantObservable = this.restaurantSource.asObservable();
 
   /***** Flaged items *****/
 

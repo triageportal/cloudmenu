@@ -1,5 +1,5 @@
 <ul class="menu-list">
-    <li *ngFor="let restaurant of restaurants; let i = index" (click)=goMenu(restaurant)>
+    <li *ngFor="let restaurant of restaurants; let i = index" (click)=getRestaurant(restaurant.id)>
         {{restaurant.name}}
     </li>
 </ul>

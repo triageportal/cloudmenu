@@ -12,22 +12,35 @@ import { restaurants } from '../../data/restaurants';
 })
 export class RestaurantsComponent implements OnInit {
 
-  restaurants = restaurants;
+  restaurants = [];
 
   constructor(private footerService: FooterService, private headerService: HeaderService, private menuService: MenuService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.restaurants = this.menuService.restaurantsList;
     this.headerService.backButtonSource.next(false);
     this.headerService.headerTitleSource.next('Cloud Menu');
     this.footerService.showDailySpecialsBtn();
   }
 
+  getRestaurant (id: any) {
+    this.menuService.getRestaurant('', id).subscribe(
+      result => {
+        this.goMenu(result);
+      },
+      error => {
+        console.log(error);
+        this.headerService.loaderOff();
+      }
+    )
+  }
+
   goMenu(restaurant) {
-    this.menuService.restaurant = restaurant;
+    this.menuService.setRestaurant(restaurant);
     this.headerService.headerTitleSource.next(restaurant.name);
     this.footerService.showPwaBtns();
     this.router.navigate(['../menu'], { relativeTo: this.route })
-    this.menuService.restaurantInfoSource.next(restaurant.info)
+    this.menuService.restaurantSource.next(restaurant.info)
   }
 
 

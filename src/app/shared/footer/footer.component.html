@@ -8,5 +8,6 @@
     <a *ngIf="footerBtns.save"><div class="icon save"></div></a>
     <a *ngIf="footerBtns.view"><div class="icon eye"></div></a>
     <a *ngIf="footerBtns.cloud"><div class="icon cloud"></div></a>
+    <a *ngIf="footerBtns.arrowRight"><div class="icon arrow-right"></div></a>
     <div class="daily-specials" [ngStyle]="{'display': footerBtns.dailySpecials ? 'flex' : 'none'}" (click)="goDailySpecials()">Daily Specials</div>
   </div>

@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   headerTitle = 'Cloud Menu';
   flags: number;
   backButton = false;
-  loader = false;
+  loader = true;
 
   constructor(private route: ActivatedRoute ,private router: Router ,private menuService: MenuService, private location: Location, private headerService: HeaderService) { }
 

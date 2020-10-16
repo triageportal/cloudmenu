@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { FlowComponent } from './flow/flow.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'takeout', pathMatch: 'full'},
+  {path: '', redirectTo: 'flow', pathMatch: 'full'},
+  { path: 'flow', component: FlowComponent}, 
   { path: 'menu', loadChildren: () => import('./shared/menu/menu.module').then(m => m.MenuModule) }, 
   { path: 'takeout', loadChildren: () => import('./takeout/takeout.module').then(m => m.TakeoutModule) },
   { path: 'dining', loadChildren: () => import('./dining/dining.module').then(m => m.DiningModule) },

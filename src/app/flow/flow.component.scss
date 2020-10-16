@@ -1,0 +1,46 @@
+@import './../../variable.scss';
+
+
+.title {
+    font-size: 24px;
+    margin-top: 50px;
+      text-align: center;
+      color: $theme-color;
+  }
+
+.input-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    .input {
+        position: relative;
+        width: 90%;
+        .label {
+            position: absolute;
+            padding-left: 5px;
+            top:12px;
+            cursor: text;
+            color: $light-gray;
+        }
+        input {
+            border: none;
+            border-bottom: 2px solid $theme-color;
+            width: 100%;
+            padding: 10px 0 3px 5px;
+            font-size: 16px;
+            box-shadow: none !important;
+            outline: none;   
+            &:focus + label, &:not(:placeholder-shown) + label {
+                opacity:1;
+                transform: scale(.9) translateY(-140%) translateX(-5px);
+            }
+        }
+
+        label, input{
+            transition: all 0.2s;
+            transition-timing-function: ease;
+            transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+            opacity: 0.6;
+        }
+    }
+}

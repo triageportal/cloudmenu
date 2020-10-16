@@ -24,7 +24,7 @@ export class FooterComponent implements OnInit {
       }
     )
     this.restaurantInfo = this.menuService.restaurant.info;
-    this.menuService.restaurantInfoObservable.subscribe(
+    this.menuService.restaurantObservable.subscribe(
       result => {
         this.restaurantInfo = result
       }

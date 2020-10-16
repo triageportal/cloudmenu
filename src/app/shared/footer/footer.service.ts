@@ -18,6 +18,7 @@ export class FooterService {
     save: false,
     view: false,
     cloud: false,
+    arrowRight: false
   }
 
 constructor() { }
@@ -65,6 +66,12 @@ constructor() { }
     this.footerButtonsSource.next(this.footerBtns)
   }
 
+  showEmailRequestBtns() {
+    this.hideFooterBtns();
+    this.footerBtns.arrowRight = true;
+    this.footerButtonsSource.next(this.footerBtns)
+  }
+
   
 
   hideFooterBtns() {
@@ -80,6 +87,7 @@ constructor() { }
       save: false,
       view: false,
       cloud: false,
+      arrowRight: false
     }
     this.footerButtonsSource.next(this.footerBtns)
   }
