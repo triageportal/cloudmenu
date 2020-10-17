@@ -1,3 +1,4 @@
+import { restaurants } from './../data/restaurantlist';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FlowService } from './flow.service';
@@ -15,6 +16,7 @@ export class FlowComponent implements OnInit {
   emailRequest = true;
   regex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
   errorMessage: string = '';
+  restaurants = restaurants;
 
   constructor(private footerService: FooterService, private headerService: HeaderService, private router: Router, private menuService: MenuService, private route: ActivatedRoute, private flowService: FlowService) {}
 
@@ -53,47 +55,42 @@ export class FlowComponent implements OnInit {
   pwa() {
     const email = localStorage.getItem('email');
     if (email) {
-      this.menuService.getRestaurantsList(email).subscribe(
+      this.menuService.restaurants = this.restaurants
+      this.router.navigate(['pwa']);
+      /* this.menuService.getRestaurantsList(email).subscribe(
         result => {
-          this.menuService.restaurantsList = result;
+          this.menuService.restaurants = result;
           this.router.navigate(['pwa']);
         },
         error => {
           console.log(error);
           this.headerService.loaderOff();
         }
-      );
+      ); */
     } else {
       this.emailRequest = true;
     }
   }
 
-  getEmail() {
-    const email = localStorage.getItem('email');
-    if (!email) {
-      return
-    } else {
-      this.email = email;
-      return email;
-    }
-  }
-
   isStandAlone() {
+    return true
     return (window.matchMedia('(display-mode: standalone)').matches);
   }
 
   validateEmail () {
+    this.email = this.email.replace(/\s+/g, '');
     if (this.regex.test(this.email)) {
       this.errorMessage = '';
-      this.submitEmail()
+      localStorage.setItem('email', this.email);
+      this.pwa()
     } else {
-      this.errorMessage = 'Wrong Email Format.'
+      if (this.errorMessage == '' || this.errorMessage == undefined) {
+        this.errorMessage = 'Enter valid email.'
+        this.email = '';
+      } else {
+        this.errorMessage = 'Wrong email format.'
+      }      
     }
   }
 
-  submitEmail() {
-    
-    console.log(this.email);
-    
-  }
 }

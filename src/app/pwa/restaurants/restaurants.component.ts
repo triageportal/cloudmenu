@@ -17,7 +17,9 @@ export class RestaurantsComponent implements OnInit {
   constructor(private footerService: FooterService, private headerService: HeaderService, private menuService: MenuService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.restaurants = this.menuService.restaurantsList;
+    this.restaurants = this.menuService.getRestaurants();
+    if (this.restaurants.length == 0) this.router.navigate(['./../../']);
+    this.headerService.loaderOff()
     this.headerService.backButtonSource.next(false);
     this.headerService.headerTitleSource.next('Cloud Menu');
     this.footerService.showDailySpecialsBtn();

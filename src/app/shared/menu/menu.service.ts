@@ -10,8 +10,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 export class MenuService {
 
   restaurant = restaurant;
-  restaurants = restaurants;
-  restaurantsList = [];
+  restaurants = [];
   menus: any[];
   menuTypeIndex: any;
   submenuIndex: any;
