@@ -8,10 +8,10 @@
               <div class="input">
                 <input type="text" [(ngModel)]="email" placeholder=" ">
                 <label class="label">Email</label>
+                <span>{{errorMessage}}</span>
                 </div>
-                <!-- <div>-></div> -->
           </div>
         </ng-container>
       </div>
-      <app-footer></app-footer>
+      <app-footer (emailEmit)="validateEmail()"></app-footer>
     </div>

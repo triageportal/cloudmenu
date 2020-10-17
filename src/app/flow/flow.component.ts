@@ -11,8 +11,10 @@ import { FooterService } from '../shared/footer/footer.service';
   styleUrls: ['./flow.component.scss']
 })
 export class FlowComponent implements OnInit {
-  email: any;
+  email: string;
   emailRequest = true;
+  regex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+  errorMessage: string = '';
 
   constructor(private footerService: FooterService, private headerService: HeaderService, private router: Router, private menuService: MenuService, private route: ActivatedRoute, private flowService: FlowService) {}
 
@@ -80,4 +82,18 @@ export class FlowComponent implements OnInit {
     return (window.matchMedia('(display-mode: standalone)').matches);
   }
 
+  validateEmail () {
+    if (this.regex.test(this.email)) {
+      this.errorMessage = '';
+      this.submitEmail()
+    } else {
+      this.errorMessage = 'Wrong Email Format.'
+    }
+  }
+
+  submitEmail() {
+    
+    console.log(this.email);
+    
+  }
 }

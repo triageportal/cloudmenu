@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { FooterService } from './footer.service';
 import { MenuService } from '../menu/menu.service';
@@ -13,6 +13,8 @@ export class FooterComponent implements OnInit {
   footerBtns: any;
   restaurantInfo: any;
   restaurant: any;
+
+  @Output() emailEmit = new EventEmitter<void>();
 
   constructor(private router: Router, private footerService: FooterService, private menuService: MenuService) { }
 
@@ -50,6 +52,10 @@ export class FooterComponent implements OnInit {
     if (flagedItems.length > 0 && !this.router.url.includes('flags')){
       this.router.navigate([`${urls[1]}/menu/items/flags`]) 
     }
+  }
+
+  submitEmail() {
+    this.emailEmit.emit();
   }
 
 }
