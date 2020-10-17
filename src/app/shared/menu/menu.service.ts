@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { restaurant } from '../../data/restaurant';
-import { restaurants } from '../../data/restaurants';
 import { Subject } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
@@ -9,7 +7,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 })
 export class MenuService {
 
-  restaurant = restaurant;
+  restaurant: any;
   restaurants = [];
   menus: any[];
   menuTypeIndex: any;
@@ -20,6 +18,21 @@ export class MenuService {
 
   constructor( private http: HttpClient) { 
     this.restaurantSource.next(this.restaurant)
+  }
+
+  isRestaurantExist() {
+    if (this.restaurant) {
+      return true;
+    } else if (JSON.parse(localStorage.getItem('restaurant'))){
+      this.restaurant = JSON.parse(localStorage.getItem('restaurant'))
+      return true
+    } else {
+      return false
+    }
+  }
+
+  getRestaurantFromLocalstorage() {
+
   }
 
   getRestaurants () {

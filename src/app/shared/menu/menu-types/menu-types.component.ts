@@ -14,6 +14,7 @@ export class MenuTypesComponent implements OnInit {
   constructor(private headerService: HeaderService, private menuService: MenuService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.headerService.loaderOff()
     this.setBackButton();
     this.menus = this.menuService.getMenus();
   }

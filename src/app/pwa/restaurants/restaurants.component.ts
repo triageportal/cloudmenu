@@ -13,6 +13,7 @@ import { restaurants } from '../../data/restaurants';
 export class RestaurantsComponent implements OnInit {
 
   restaurants = [];
+  rest = restaurants
 
   constructor(private footerService: FooterService, private headerService: HeaderService, private menuService: MenuService, private router: Router, private route: ActivatedRoute) { }
 
@@ -25,16 +26,27 @@ export class RestaurantsComponent implements OnInit {
     this.footerService.showDailySpecialsBtn();
   }
 
-  getRestaurant (id: any) {
-    this.menuService.getRestaurant('', id).subscribe(
-      result => {
-        this.goMenu(result);
-      },
-      error => {
-        console.log(error);
-        this.headerService.loaderOff();
-      }
-    )
+  getRestaurant (id, index) {
+    console.log(id);
+    if (this.restaurants[index].menus == undefined || this.restaurants[index].menus.length == 0 ) {
+      console.log(id);
+      const restaurant = this.rest.find( item => { return item.id == id } );
+      this.restaurants[index].menus = restaurant.menus;
+      this.goMenu(this.restaurants[index]);
+      /* this.menuService.getRestaurant('', id).subscribe(
+        result => {
+          this.restaurants[index].menus = result;
+          this.goMenu(this.restaurants[index].menus);
+        },
+        error => {
+          console.log(error);
+          this.headerService.loaderOff();
+        }
+      ) */
+    } else {
+      console.log(id);
+      this.goMenu(this.restaurants[index]);
+    }
   }
 
   goMenu(restaurant) {

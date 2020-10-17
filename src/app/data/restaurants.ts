@@ -1,6 +1,7 @@
 export const restaurants = [   
     {
         name: 'Buongiorno',
+        id: 2,
         info: {
             street: {},
             phone: '',
@@ -175,6 +176,7 @@ export const restaurants = [
     },
     {
         name: 'Allora Pizza & Pasta',
+        id: 1,
         info: {
             street: {},
             phone: '',
@@ -397,6 +399,7 @@ export const restaurants = [
     },
     {
         name: 'Uncle Joe\'s',
+        id: 3,
         info: {
             street: {},
             phone: '',
@@ -571,6 +574,7 @@ export const restaurants = [
     },
     {
         name: 'La Fogata',
+        id: 4,
         info: {
             street: '800 Lighthouse dr',
             city: 'North Palm Beach',

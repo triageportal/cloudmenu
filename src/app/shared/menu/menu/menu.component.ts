@@ -15,11 +15,17 @@ export class MenuComponent implements OnInit {
   constructor(private router: Router, private footerService: FooterService, private menuService: MenuService, private headerService: HeaderService) { }
 
   ngOnInit(): void {
+    this.setMenu();
     this.setFooterBtns();
+  }
+
+  setMenu() {
     if (this.menuService.flagedItems[this.menuService.restaurant.name]) {
       this.headerService.flagsSource.next(this.menuService.flagedItems[this.menuService.restaurant.name].length)
     }
+    this.headerService.headerTitleSource.next(this.menuService.restaurant.name);
   }
+
   setFooterBtns() {
     const url = this.router.url.split('/');
     switch (url[1]) {

@@ -34,6 +34,8 @@ export class HeaderComponent implements OnInit {
 
     this.headerService.headerTitleObservable.subscribe (
       result => {
+        console.log(result);
+        
         this.headerTitle = result;
       }
     )
