@@ -21,7 +21,8 @@ export class ItemsComponent implements OnInit {
   constructor(private headerService: HeaderService, private menuService: MenuService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    if (this.menuService.menuTypeIndex == undefined) {
+    const url = this.router.url;
+    if (this.menuService.menuTypeIndex == undefined && !url.includes('flags')) {
       this.router.navigate(['./../../'], {relativeTo: this.route})
     } else {
       this.route.params.subscribe(
