@@ -25,6 +25,7 @@ export class FlowComponent implements OnInit {
   ngOnInit(): void {
     this.setFlow();
     this.footerService.showEmailRequestBtns();
+    this.menuService.getFlagedItemsFromLocalstorage()
   }
 
 
@@ -88,7 +89,7 @@ export class FlowComponent implements OnInit {
   }
 
   isStandAlone() {
-    //return true
+    return true
     return (window.matchMedia('(display-mode: standalone)').matches);
   }
 
