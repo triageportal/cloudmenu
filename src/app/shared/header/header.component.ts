@@ -60,6 +60,8 @@ export class HeaderComponent implements OnInit {
   }
 
   goFlagedItems() {
+    console.log(this.menuService.flagedItems);
+    
     let urls = this.router.url.split('/');
     if (!this.router.url.includes('flags')){
       this.router.navigate([`${urls[1]}/menu/items/flags`]) 
