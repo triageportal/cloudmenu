@@ -31,9 +31,6 @@ export class MenuService {
     }
   }
 
-  getRestaurantFromLocalstorage() {
-
-  }
 
   getRestaurants () {
     return this.restaurants
@@ -80,6 +77,7 @@ export class MenuService {
 
   setRestaurant(restaurant) {
     this.restaurant = restaurant;
+    localStorage.setItem('restaurant', JSON.stringify(restaurant))
     this.restaurantSource.next(restaurant)
   }
 
@@ -102,17 +100,25 @@ export class MenuService {
 
   addFlag (item, restaurantName = this.restaurant.name) {
     this.flagedItems[restaurantName].push(item)
+    localStorage.setItem('flaggedItems', JSON.stringify(this.flagedItems));
     return this.flagedItems[restaurantName].length;
   }
 
   removeFlag (flagedIndex, restaurantName = this.restaurant.name) {
     this.flagedItems[restaurantName].splice(flagedIndex, 1);
+    localStorage.setItem('flaggedItems', JSON.stringify(this.flagedItems));
     return this.flagedItems[restaurantName].length;
   }
 
   getFlagedItems() {
     return this.flagedItems[this.restaurant.name] || [];
   }
+
+  getFlagedItemsFromLocalstorage() {
+    this.flagedItems = JSON.parse(localStorage.getItem('flaggedItems'))
+  }
+
+  
 
 
   /***** Flaged items *****/

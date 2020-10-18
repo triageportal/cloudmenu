@@ -18,7 +18,6 @@ export class PwaComponent implements OnInit {
   constructor(private footerService: FooterService, private router: Router ,private menuService: MenuService, private headerService: HeaderService) { }
 
   ngOnInit(): void {
-    this.restaurant = this.menuService.restaurant;
     
   }
 
