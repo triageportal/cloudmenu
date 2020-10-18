@@ -1,6 +1,5 @@
-import { HeaderService } from '../../shared/header/header.service';
+
 import { Component, OnInit } from '@angular/core';
-import { MenuService } from '../../shared/menu/menu.service';
 
 @Component({
   selector: 'app-takeout',
@@ -10,10 +9,9 @@ import { MenuService } from '../../shared/menu/menu.service';
 export class TakeoutComponent implements OnInit {
   restaurant: any;
 
-  constructor(private menuService: MenuService, private headerService: HeaderService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    //this.headerService.headerTitleSource.next(this.menuService.restaurant.name)
   }
 
 }

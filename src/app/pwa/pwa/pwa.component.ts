@@ -1,8 +1,5 @@
-import { Component, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
-import { MenuService } from '../../shared/menu/menu.service';
-import { HeaderService } from '../../shared/header/header.service';
+import { Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
-import { FooterService } from '../../shared/footer/footer.service';
 
 @Component({
   selector: 'app-pwa',
@@ -15,7 +12,7 @@ export class PwaComponent implements OnInit {
   dailySpecials = true;
   footerButtons = true;
   
-  constructor(private footerService: FooterService, private router: Router ,private menuService: MenuService, private headerService: HeaderService) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     
