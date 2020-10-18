@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit {
     const urls = this.router.url.split('/');
     const last = urls[urls.length - 1];
     switch (last) {
-      case 'flags':   this.router.navigate([`${urls[1]}/menu/items`]); break;
+      case 'flags':  this.menuService.submenuIndex ? this.router.navigate([`${urls[1]}/menu/items`]) : this.router.navigate([`${urls[1]}/menu`]); break;
       case 'items':   this.router.navigate([`${urls[1]}/menu/submenus`]); break;
       case 'submenus':   this.router.navigate([`${urls[1]}/menu`]); break;
       case 'menu':   this.router.navigate([`${urls[1]}/restaurants`]); break;
