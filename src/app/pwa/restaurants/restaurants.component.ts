@@ -27,9 +27,7 @@ export class RestaurantsComponent implements OnInit {
   }
 
   getRestaurant (id, index) {
-    console.log(id);
     if (this.restaurants[index].menus == undefined || this.restaurants[index].menus.length == 0 ) {
-      console.log(id);
       const restaurant = this.rest.find( item => { return item.id == id } );
       this.restaurants[index].menus = restaurant.menus;
       this.goMenu(this.restaurants[index]);
@@ -44,7 +42,6 @@ export class RestaurantsComponent implements OnInit {
         }
       ) */
     } else {
-      console.log(id);
       this.goMenu(this.restaurants[index]);
     }
   }

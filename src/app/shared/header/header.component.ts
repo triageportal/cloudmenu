@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MenuService } from '../menu/menu.service';
 import {Location} from '@angular/common';
 import { HeaderService } from './header.service';
-import { log } from 'util';
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -34,8 +33,6 @@ export class HeaderComponent implements OnInit {
 
     this.headerService.headerTitleObservable.subscribe (
       result => {
-        console.log(result);
-        
         this.headerTitle = result;
       }
     )
@@ -60,8 +57,6 @@ export class HeaderComponent implements OnInit {
   }
 
   goFlagedItems() {
-    console.log(this.menuService.flagedItems);
-    
     let urls = this.router.url.split('/');
     if (!this.router.url.includes('flags')){
       this.router.navigate([`${urls[1]}/menu/items/flags`]) 
