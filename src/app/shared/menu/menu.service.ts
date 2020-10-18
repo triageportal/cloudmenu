@@ -22,15 +22,28 @@ export class MenuService {
 
   isRestaurantExist() {
     if (this.restaurant) {
+      if (this.isExpired(this.restaurant.timestamp)) return false;
       return true;
     } else if (JSON.parse(localStorage.getItem('restaurant'))){
       this.restaurant = JSON.parse(localStorage.getItem('restaurant'))
+      if (this.isExpired(this.restaurant.timestamp)) return false;
       return true
     } else {
       return false
     }
   }
 
+  isExpired(timestamp) {
+    const currentTime = new Date().valueOf();
+    const diff = currentTime - timestamp;
+    console.log(diff)
+    if (diff > 180 * 60 * 1000) {  
+      localStorage.removeItem('restaurant');
+      return true
+    };
+    return false;
+    
+  }
 
   getRestaurants () {
     return this.restaurants
@@ -76,6 +89,8 @@ export class MenuService {
   }
 
   setRestaurant(restaurant) {
+    const currentTime = new Date().valueOf();
+    restaurant.timestamp = currentTime;
     this.restaurant = restaurant;
     localStorage.setItem('restaurant', JSON.stringify(restaurant))
     this.restaurantSource.next(restaurant)
